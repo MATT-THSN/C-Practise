@@ -7,7 +7,7 @@
 #include <stdio.h>
 
 int main (void) {
-    printf("\nC you later\n");
+    printf("Matthew Thompson");
     getchar();
     return 0;
 };
