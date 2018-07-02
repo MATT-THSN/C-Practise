@@ -10,7 +10,7 @@ int main(void) {
   int iUserB = 0;
   int iUserX = 0;
   int iUserY = 0;
-
+  
   printf("Give me a number for A:");
   scanf("%d", &iUserA);
 
