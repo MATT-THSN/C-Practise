@@ -1,6 +1,6 @@
 /*
 * Author: Matthew Thompson
-* Desc: Challenge 2 in Chapter 2
+* Desc: Challenge 3 in Chapter 2
 */
 
 #include <stdio.h>
