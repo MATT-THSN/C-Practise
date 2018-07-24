@@ -144,6 +144,10 @@ int main(void) {
     return 0;
 }
 
+/****************************/
+//        FUNCTIONS
+/****************************/
+
 void GenNums(char Diff) {
     iRandNum1 = rand() % 100;
     iRandNum2 = rand() % 100;
