@@ -148,6 +148,8 @@ int main(void) {
 //        FUNCTIONS
 /****************************/
 
+//     *GenNums Function*
+//Generates random numbers for game
 void GenNums(char Diff) {
     iRandNum1 = rand() % 100;
     iRandNum2 = rand() % 100;
@@ -159,6 +161,8 @@ void GenNums(char Diff) {
     }
 }
 
+//     *Countdown Function*
+//Counts allows user to view numbers before they disappear
 void Countdown(int CurTime, int TimePast, char Diff) {
     if (Diff == 'E' || Diff == 'e' || Diff == 'N' || Diff == 'n') {
         CurTime = time(NULL);
