@@ -145,10 +145,10 @@ int main(void) {
 }
 
 void GenNums(char Diff) {
+    iRandNum1 = rand() % 100;
+    iRandNum2 = rand() % 100;
+    iRandNum3 = rand() % 100;
     if (Diff == 'E' || Diff == 'e') {
-        iRandNum1 = rand() % 100;
-        iRandNum2 = rand() % 100;
-        iRandNum3 = rand() % 100;
     }
     else if (Diff == 'N' || Diff == 'n' || Diff == 'H' || Diff == 'h') {
         iRandNum1 = rand() % 100;
