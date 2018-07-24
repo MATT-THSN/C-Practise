@@ -9,6 +9,9 @@
 #include <stdlib.h>
 #include <time.h>
 
+//Waiting 3 seconds
+void Countdown(int CurTime, int TimePast);
+
 int main(void) {
     srand(time(NULL));
     int iRandNum1 = 0;
@@ -35,20 +38,10 @@ int main(void) {
                 iRandNum1 = rand() % 100;
                 iRandNum2 = rand() % 100;
                 iRandNum3 = rand() % 100;
-                
                 printf("\nGet ready for your 3 numbers...\n\n");
-                iCurrentTime = time(NULL);
-                do {
-                    iTimePast = time(NULL);
-                } 
-                while ((iTimePast - iCurrentTime) < 3);
+                Countdown(iCurrentTime, iTimePast);
                 printf("\nHere are your numbers to remember:\n\n%d\t%d\t%d\n", iRandNum1, iRandNum2, iRandNum3);
-                //Giving the user 3 seconds to memorise
-                iCurrentTime = time(NULL);
-                do {
-                    iTimePast = time(NULL);
-                } 
-                while ((iTimePast - iCurrentTime) < 3);
+                Countdown(iCurrentTime, iTimePast);
 
                 //Clears the user's screen and asks for numbers
                 system("clear");
@@ -75,4 +68,12 @@ int main(void) {
         }
     } while (bUserInterface);
     return 0;
+}
+
+void Countdown(int CurTime, int TimePast) {
+    CurTime = time(NULL);
+    do {
+        TimePast = time(NULL);
+    } 
+    while ((TimePast - CurTime) < 3);
 }
