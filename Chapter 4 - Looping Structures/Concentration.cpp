@@ -30,11 +30,12 @@ int main(void) {
         //Has the user said Yes?
         if (cMenuSelection == 'Y' || cMenuSelection == 'y') {
             cMenuSelection = '\0';
-            //Gives the user 3 random numbers
-            iRandNum1 = rand() % 100;
-            iRandNum2 = rand() % 100;
-            iRandNum3 = rand() % 100;
             do {
+                //Gives the user 3 random numbers
+                iRandNum1 = rand() % 100;
+                iRandNum2 = rand() % 100;
+                iRandNum3 = rand() % 100;
+                
                 printf("\nGet ready for your 3 numbers...\n\n");
                 iCurrentTime = time(NULL);
                 do {
