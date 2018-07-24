@@ -42,68 +42,74 @@ int main(void) {
         printf("\tTo quit the game, enter \'N\'\n\n");
         scanf("\t %c", &cMenuSelection);
         system("clear");
-        
+
         if (cMenuSelection == 'C' || cMenuSelection == 'c') {
             cMenuSelection = '\0';
             do {
                 if(cDifficulty == 'E' || cDifficulty == 'e') {
                     GenNums(cDifficulty);
-                    printf("\nGet ready for your 3 numbers...\n\n");
+                    printf("\n\tGet ready for your 3 numbers...\n\n");
                     Countdown(iCurrentTime, iTimePast, cDifficulty);
-                    printf("\nHere are your numbers to remember:\n\n%d\t%d\t%d\n", iRandNum1, iRandNum2, iRandNum3);
+                    printf("\n\tHere are your numbers to remember:\n\n\t%d\t%d\t%d\n", iRandNum1, iRandNum2, iRandNum3);
                     Countdown(iCurrentTime, iTimePast, cDifficulty);
 
                     system("clear");
-                    printf("What were the 3 numbers?\n");
+                    printf("\n\tWhat were the 3 numbers?\n\n");
                     scanf("%d%d%d", &iResponse1, &iResponse2, &iResponse3);
 
                     if(iRandNum1 == iResponse1 && iRandNum2 == iResponse2 && iRandNum3 == iResponse3) {
-                        printf("\nThat's correct! You remembered the 3 numbers!\n\n");
+                        printf("\n\tThat's correct! You remembered the 3 numbers!\n\n");
                         Correct = true;
+                        Countdown(iCurrentTime, iTimePast, cDifficulty);
                     }
                     else {
-                        printf("\nSorry, that doesn't seem to be right, try again!\n");
+                        printf("\n\tSorry, that doesn't seem to be right, try again!\n");
+                        Countdown(iCurrentTime, iTimePast, cDifficulty);
                         continue;
                     }
                 }
                 else if(cDifficulty == 'N' || cDifficulty == 'n') {
                     GenNums(cDifficulty);
-                    printf("\nGet ready for your 5 numbers...\n\n");
+                    printf("\n\tGet ready for your 5 numbers...\n\n");
                     Countdown(iCurrentTime, iTimePast, cDifficulty);
-                    printf("\nHere are your numbers to remember:\n\n%d\t%d\t%d\t%d\t%d\n", iRandNum1, iRandNum2, iRandNum3, iRandNum4, iRandNum5);
+                    printf("\n\tHere are your numbers to remember:\n\n\t%d\t%d\t%d\t%d\t%d\n", iRandNum1, iRandNum2, iRandNum3, iRandNum4, iRandNum5);
                     Countdown(iCurrentTime, iTimePast, cDifficulty);
 
                     system("clear");
-                    printf("What were the 5 numbers?\n");
+                    printf("\n\tWhat were the 5 numbers?\n\n");
                     scanf("%d%d%d%d%d", &iResponse1, &iResponse2, &iResponse3, &iResponse4, &iResponse5);
 
                     if(iRandNum1 == iResponse1 && iRandNum2 == iResponse2 && iRandNum3 == iResponse3 
                     && iRandNum4 == iResponse4 && iRandNum5 == iResponse5) {
-                        printf("\nThat's correct! You remembered the 5 numbers!\n\n");
+                        printf("\n\tThat's correct! You remembered the 5 numbers!\n\n");
+                        Countdown(iCurrentTime, iTimePast, cDifficulty);
                         Correct = true;
                     }
                     else {
-                        printf("\nSorry, that doesn't seem to be right, try again!\n");
+                        printf("\n\tSorry, that doesn't seem to be right, try again!\n");
+                        Countdown(iCurrentTime, iTimePast, cDifficulty);
                         continue;
                     }
                 }
                 else if (cDifficulty == 'H' || cDifficulty == 'h') {
                     GenNums(cDifficulty);
-                    printf("\nGet ready for your 5 numbers...\n\n");
+                    printf("\n\tGet ready for your 5 numbers...\n\n");
                     Countdown(iCurrentTime, iTimePast, cDifficulty);
-                    printf("\nHere are your numbers to remember:\n\n%d\t%d\t%d\t%d\t%d\n", iRandNum1, iRandNum2, iRandNum3, iRandNum4, iRandNum5);
+                    printf("\n\tHere are your numbers to remember:\n\n%d\t%d\t%d\t%d\t%d\n", iRandNum1, iRandNum2, iRandNum3, iRandNum4, iRandNum5);
                     Countdown(iCurrentTime, iTimePast, cDifficulty);
 
                     system("clear");
-                    printf("What were the 5 numbers?\n");
+                    printf("\n\tWhat were the 5 numbers?\n\n");
                     scanf("%d%d%d%d%d", &iResponse1, &iResponse2, &iResponse3, &iResponse4, &iResponse5);
 
                     if(iRandNum1 == iResponse1 && iRandNum2 == iResponse2 && iRandNum3 == iResponse3) {
-                        printf("\nThat's correct! You remembered the 5 numbers!\n\n");
+                        printf("\n\tThat's correct! You remembered the 5 numbers!\n\n");
                         Correct = true;
+                        Countdown(iCurrentTime, iTimePast, cDifficulty);
                     }
                     else {
-                        printf("\nSorry, that doesn't seem to be right, try again!\n");
+                        printf("\n\tSorry, that doesn't seem to be right, try again!\n\n");
+                        Countdown(iCurrentTime, iTimePast, cDifficulty);
                         continue;
                     }
                 }
@@ -115,7 +121,7 @@ int main(void) {
         else if (cMenuSelection == 'N' || cMenuSelection == 'n') {
             cMenuSelection = '\0';
             system("clear");
-            printf("Thank you for playing");
+            printf("\n\tThank you for playing\n\n\tGoodbye!\n");
             bUserInterface = false;
             continue;
         }
@@ -125,10 +131,10 @@ int main(void) {
             cMenuSelection = '\0';
             do {
                 system("clear");
-                printf("\tDIFFICULTY SELECTION MENU\n\n");
-                printf("For Easy enter \'E\'\n");
-                printf("For Normal enter \'N\'\n");
-                printf("For Hard enter \'H\'\n");
+                printf("\t\tDIFFICULTY SELECTION MENU\n\n");
+                printf("\tFor Easy enter \'E\'\n");
+                printf("\tFor Normal enter \'N\'\n");
+                printf("\tFor Hard enter \'H\'\n");
                 scanf(" %c", &cDifficulty);
             } 
             //Ensures that valid option has been entered
