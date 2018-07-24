@@ -25,15 +25,22 @@ int main(void) {
 
     do {
         printf("Would you like to play a game of random numbers?\nY or N: ");
-        scanf("%c", &cMenuSelection);
+        scanf(" %c", &cMenuSelection);
 
         //Has the user said Yes?
         if (cMenuSelection == 'Y' || cMenuSelection == 'y') {
+            cMenuSelection = '\0';
             //Gives the user 3 random numbers
             iRandNum1 = rand() % 100;
             iRandNum2 = rand() % 100;
             iRandNum3 = rand() % 100;
             do {
+                printf("\nGet ready for your 3 numbers...\n\n");
+                iCurrentTime = time(NULL);
+                do {
+                    iTimePast = time(NULL);
+                } 
+                while ((iTimePast - iCurrentTime) < 3);
                 printf("\nHere are your numbers to remember:\n\n%d\t%d\t%d\n", iRandNum1, iRandNum2, iRandNum3);
                 //Giving the user 3 seconds to memorise
                 iCurrentTime = time(NULL);
@@ -49,7 +56,7 @@ int main(void) {
 
                 //Checks the answers
                 if(iRandNum1 == iResponse1 && iRandNum2 == iResponse2 && iRandNum3 == iResponse3) {
-                    printf("\nThat's correct! You remembered the 3 numbers!\n");
+                    printf("\nThat's correct! You remembered the 3 numbers!\n\n");
                     Correct = true;
                 }
                 else {
@@ -59,6 +66,8 @@ int main(void) {
         }
         //Has the user said No?
         else if (cMenuSelection == 'N' || cMenuSelection == 'n') {
+            cMenuSelection = '\0';
+            system("clear");
             printf("Thank you for playing");
             bUserInterface = false;
             continue;
