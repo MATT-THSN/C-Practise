@@ -39,6 +39,7 @@ int main(void) {
         printf("\tMAIN MENU\n\n");
         printf("To get straight to playing, enter \'C\'\n");
         printf("To change the difficulty, enter \'D\'\n");
+        printf("To quit the game, enter \'N\'\n");
         scanf(" %c", &cMenuSelection);
 
         if (cMenuSelection == 'C' || cMenuSelection == 'c') {
