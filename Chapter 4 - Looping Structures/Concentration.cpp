@@ -148,37 +148,20 @@ void GenNums(char Diff) {
     iRandNum1 = rand() % 100;
     iRandNum2 = rand() % 100;
     iRandNum3 = rand() % 100;
-    if (Diff == 'E' || Diff == 'e') {
-    }
-    else if (Diff == 'N' || Diff == 'n' || Diff == 'H' || Diff == 'h') {
-        iRandNum1 = rand() % 100;
-        iRandNum2 = rand() % 100;
-        iRandNum3 = rand() % 100;
-        iRandNum4 = rand() % 100;
-        iRandNum5 = rand() % 100;
+
+    if (Diff == 'N' || Diff == 'n' || Diff == 'H' || Diff == 'h') {
+    iRandNum4 = rand() % 100;
+    iRandNum5 = rand() % 100;
     }
 }
 
 void Countdown(int CurTime, int TimePast, char Diff) {
-    if (Diff == 'E' || Diff == 'e') {
+    if (Diff == 'E' || Diff == 'e' || Diff == 'N' || Diff == 'n') {
         CurTime = time(NULL);
-        do {
-            TimePast = time(NULL);
-        } 
-        while ((TimePast - CurTime) < 5);
-    }
-    else if (Diff == 'N' || Diff == 'n') {
-        CurTime = time(NULL);
-        do {
-            TimePast = time(NULL);
-        } 
-        while ((TimePast - CurTime) < 5);
+        do { TimePast = time(NULL); } while ((TimePast - CurTime) < 5);
     }
     else if (Diff == 'H' || Diff == 'h') {
         CurTime = time(NULL);
-        do {
-            TimePast = time(NULL);
-        } 
-        while ((TimePast - CurTime) < 3);
+        do { TimePast = time(NULL); } while ((TimePast - CurTime) < 3);
     }
 }
