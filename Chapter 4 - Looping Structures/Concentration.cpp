@@ -9,7 +9,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-//Waiting 3 seconds
 void Countdown(int CurTime, int TimePast, char Diff);
 void GenNums(char Diff);
 
@@ -38,11 +37,10 @@ int main(void) {
     do {
         system("clear");
         printf("\tMAIN MENU\n\n");
-        printf("To get straight to playing, enter \'c\'\n");
-        printf("To change the difficulty, enter \'d\'\n");
+        printf("To get straight to playing, enter \'C\'\n");
+        printf("To change the difficulty, enter \'D\'\n");
         scanf(" %c", &cMenuSelection);
 
-        //Has the user said Yes?
         if (cMenuSelection == 'C' || cMenuSelection == 'c') {
             cMenuSelection = '\0';
             do {
@@ -53,12 +51,10 @@ int main(void) {
                     printf("\nHere are your numbers to remember:\n\n%d\t%d\t%d\n", iRandNum1, iRandNum2, iRandNum3);
                     Countdown(iCurrentTime, iTimePast, cDifficulty);
 
-                    //Clears the user's screen and asks for numbers
                     system("clear");
                     printf("What were the 3 numbers?\n");
                     scanf("%d%d%d", &iResponse1, &iResponse2, &iResponse3);
 
-                    //Checks the answers
                     if(iRandNum1 == iResponse1 && iRandNum2 == iResponse2 && iRandNum3 == iResponse3) {
                         printf("\nThat's correct! You remembered the 3 numbers!\n\n");
                         Correct = true;
@@ -75,12 +71,10 @@ int main(void) {
                     printf("\nHere are your numbers to remember:\n\n%d\t%d\t%d\t%d\t%d\n", iRandNum1, iRandNum2, iRandNum3, iRandNum4, iRandNum5);
                     Countdown(iCurrentTime, iTimePast, cDifficulty);
 
-                    //Clears the user's screen and asks for numbers
                     system("clear");
                     printf("What were the 5 numbers?\n");
                     scanf("%d%d%d%d%d", &iResponse1, &iResponse2, &iResponse3, &iResponse4, &iResponse5);
 
-                    //Checks the answers
                     if(iRandNum1 == iResponse1 && iRandNum2 == iResponse2 && iRandNum3 == iResponse3 
                     && iRandNum4 == iResponse4 && iRandNum5 == iResponse5) {
                         printf("\nThat's correct! You remembered the 5 numbers!\n\n");
@@ -98,12 +92,10 @@ int main(void) {
                     printf("\nHere are your numbers to remember:\n\n%d\t%d\t%d\t%d\t%d\n", iRandNum1, iRandNum2, iRandNum3, iRandNum4, iRandNum5);
                     Countdown(iCurrentTime, iTimePast, cDifficulty);
 
-                    //Clears the user's screen and asks for numbers
                     system("clear");
                     printf("What were the 5 numbers?\n");
                     scanf("%d%d%d%d%d", &iResponse1, &iResponse2, &iResponse3, &iResponse4, &iResponse5);
 
-                    //Checks the answers
                     if(iRandNum1 == iResponse1 && iRandNum2 == iResponse2 && iRandNum3 == iResponse3) {
                         printf("\nThat's correct! You remembered the 5 numbers!\n\n");
                         Correct = true;
@@ -117,7 +109,7 @@ int main(void) {
             } while(Correct == false);
         }
 
-        //Has the user said No?
+        //Checks if the user wants to quit the program
         else if (cMenuSelection == 'N' || cMenuSelection == 'n') {
             cMenuSelection = '\0';
             system("clear");
@@ -125,7 +117,8 @@ int main(void) {
             bUserInterface = false;
             continue;
         }
-        //Does the user want to change the difficulty?
+
+        //Checks if the user wants to change the difficulty
         else if (cMenuSelection == 'D' || cMenuSelection == 'd') {
             cMenuSelection = '\0';
             do {
@@ -136,6 +129,7 @@ int main(void) {
                 printf("For Hard enter \'H\'\n");
                 scanf(" %c", &cDifficulty);
             } 
+            //Ensures that valid option has been entered
             while ( cDifficulty != 'E' && cDifficulty != 'e' && cDifficulty != 'N' 
             && cDifficulty != 'n' && cDifficulty != 'H'&& cDifficulty != 'h'
             );
