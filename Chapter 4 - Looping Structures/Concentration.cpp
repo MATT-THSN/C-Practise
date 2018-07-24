@@ -1,7 +1,7 @@
 /* 
 * App name: Concentration
-* Desc: Concentration
-* Date Modified: 03/07/2018
+* Desc: A memory game with numbers
+* Date Modified: 24/07/2018
 * Author: Matthew Thompson
 */
 
