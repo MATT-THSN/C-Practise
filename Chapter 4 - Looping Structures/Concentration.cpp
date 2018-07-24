@@ -11,7 +11,7 @@
 
 //Waiting 3 seconds
 void Countdown(int CurTime, int TimePast, char Diff);
-void GenNums(char Diff, int One, int Two, int Three, int Four, int Five);
+void GenNums(char Diff);
 
 int iRandNum1 = 0;
 int iRandNum2 = 0;
@@ -47,7 +47,7 @@ int main(void) {
             cMenuSelection = '\0';
             do {
                 if(cDifficulty == 'E' || cDifficulty == 'e') {
-                    GenNums(cDifficulty, iRandNum1, iRandNum2, iRandNum3, iRandNum4, iRandNum5);
+                    GenNums(cDifficulty);
                     printf("\nGet ready for your 3 numbers...\n\n");
                     Countdown(iCurrentTime, iTimePast, cDifficulty);
                     printf("\nHere are your numbers to remember:\n\n%d\t%d\t%d\n", iRandNum1, iRandNum2, iRandNum3);
@@ -69,7 +69,7 @@ int main(void) {
                     }
                 }
                 else if(cDifficulty == 'N' || cDifficulty == 'n') {
-                    GenNums(cDifficulty, iRandNum1, iRandNum2, iRandNum3, iRandNum4, iRandNum5);
+                    GenNums(cDifficulty);
                     printf("\nGet ready for your 5 numbers...\n\n");
                     Countdown(iCurrentTime, iTimePast, cDifficulty);
                     printf("\nHere are your numbers to remember:\n\n%d\t%d\t%d\t%d\t%d\n", iRandNum1, iRandNum2, iRandNum3, iRandNum4, iRandNum5);
@@ -92,7 +92,7 @@ int main(void) {
                     }
                 }
                 else if (cDifficulty == 'H' || cDifficulty == 'h') {
-                    GenNums(cDifficulty, iRandNum1, iRandNum2, iRandNum3, iRandNum4, iRandNum5);
+                    GenNums(cDifficulty);
                     printf("\nGet ready for your 5 numbers...\n\n");
                     Countdown(iCurrentTime, iTimePast, cDifficulty);
                     printf("\nHere are your numbers to remember:\n\n%d\t%d\t%d\t%d\t%d\n", iRandNum1, iRandNum2, iRandNum3, iRandNum4, iRandNum5);
@@ -144,7 +144,7 @@ int main(void) {
     return 0;
 }
 
-void GenNums(char Diff, int One, int Two, int Three, int Four, int Five) {
+void GenNums(char Diff) {
     if (Diff == 'E' || Diff == 'e') {
         iRandNum1 = rand() % 100;
         iRandNum2 = rand() % 100;
