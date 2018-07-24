@@ -36,12 +36,13 @@ int main(void) {
 
     do {
         system("clear");
-        printf("\tMAIN MENU\n\n");
-        printf("To get straight to playing, enter \'C\'\n");
-        printf("To change the difficulty, enter \'D\'\n");
-        printf("To quit the game, enter \'N\'\n");
-        scanf(" %c", &cMenuSelection);
-
+        printf("\n\tMAIN MENU\n\n");
+        printf("\tTo get straight to playing, enter \'C\'\n");
+        printf("\tTo change the difficulty, enter \'D\'\n");
+        printf("\tTo quit the game, enter \'N\'\n\n");
+        scanf("\t %c", &cMenuSelection);
+        system("clear");
+        
         if (cMenuSelection == 'C' || cMenuSelection == 'c') {
             cMenuSelection = '\0';
             do {
