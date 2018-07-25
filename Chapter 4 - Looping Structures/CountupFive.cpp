@@ -12,7 +12,10 @@ int main(void) {
     
     int counter = 0;
     
-    do {
-        printf("%d\n", counter = counter + 5);
-    } while (counter != 100);
+    while(counter <= 100) {
+        if ((counter % 5) == 0) {
+            printf("%d\n", counter);
+        }
+        counter++;
+    }
 }
