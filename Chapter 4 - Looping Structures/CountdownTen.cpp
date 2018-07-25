@@ -12,12 +12,10 @@ int main(void) {
     
     int counter = 100;
 
-    system("clean");
-    for(int x = 0; x < 1; x++) {
-        printf("%d\n", counter);
-    }
-
-    while(counter > 0) {
-        printf("%d\n", counter = counter - 10);
+    while(counter >= 0) {
+        if ((counter % 10) == 0) {
+            printf("%d\n", counter);
+        }
+        counter--;
     }
 }
