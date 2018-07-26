@@ -9,7 +9,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-void MainDisplay(void);
 void Questions(int Category);
 void EndingDisplay(void);
 
@@ -18,11 +17,7 @@ int iIncorrectAnswers = 0;
 
 int main(void) {
     system("clear");
-    MainDisplay();
-    return 0;
-}
 
-void MainDisplay(void) {
     int iSelection = 0;
     printf("\n\tTRIVIA GAME\n");
     printf("\n\tCategories:");
@@ -41,6 +36,7 @@ void MainDisplay(void) {
     else {
         EndingDisplay();
     }
+    return 0;
 }
 
 void Questions(int Category) {
