@@ -1,6 +1,6 @@
 /* 
-* App name: CountFive
-* Desc: Counts up from 1 to 100 in increments of 5
+* App name: FunctionPrototypes
+* Desc: Practise writing function prototypes and function definitions
 * Date Modified: 26/07/2018
 * Author: Matthew Thompson
 */
@@ -8,6 +8,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+///////////////////////////////////
+/*       Function Prototypes     */
+///////////////////////////////////
 float DivideTwoNumbers(int x, int y);
 int WhoIsHigher(int x, int y);
 void ATM(void);
@@ -17,6 +20,9 @@ int main(void) {
     return 0;
 }
 
+///////////////////////////////////
+/*      Function Definitions     */
+///////////////////////////////////
 float DivideTwoNumbers(int x, int y) { 
     return x / y;
 }
