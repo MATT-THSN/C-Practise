@@ -16,27 +16,29 @@ int iCorrectAnswers = 0;
 int iIncorrectAnswers = 0;
 
 int main(void) {
-    system("clear");
-
     int iSelection = 0;
-    printf("\n\tTRIVIA GAME\n");
-    printf("\n\tCategories:");
-    printf("\n\tAnimal Trivia: Enter \'1\'");
-    printf("\n\tVehicle Trivia: Enter \'2\'");
-    printf("\n\tHistory Trivia: Enter \'3\'");
-    printf("\n\tMovie Trivia: Enter \'4\'");
-    printf("\n\tQUIT: Enter \'5\'\n\n");
-    printf("\tSelection: ");
-    scanf("%d", &iSelection);
-    
-    system("clear");
-    if(iSelection < 5) {
-        Questions(iSelection);
+
+    while (true) {
+        system("clear");
+        printf("\n\tTRIVIA GAME\n");
+        printf("\n\tCategories:");
+        printf("\n\tAnimal Trivia: Enter \'1\'");
+        printf("\n\tVehicle Trivia: Enter \'2\'");
+        printf("\n\tHistory Trivia: Enter \'3\'");
+        printf("\n\tMovie Trivia: Enter \'4\'");
+        printf("\n\tQUIT: Enter \'5\'\n\n");
+        printf("\tSelection: ");
+        scanf("%d", &iSelection);
+        system("clear");
+        
+        if(iSelection < 5) {
+            Questions(iSelection);
+        }
+        else {
+            EndingDisplay();
+            return 0;
+        }
     }
-    else {
-        EndingDisplay();
-    }
-    return 0;
 }
 
 void Questions(int Category) {
