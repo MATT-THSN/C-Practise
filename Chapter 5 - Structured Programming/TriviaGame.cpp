@@ -11,8 +11,10 @@
 
 void MainDisplay(void);
 void Questions(int Category);
-int AnswerTracker(bool);
 void EndingDisplay(void);
+
+int iCorrectAnswers = 0;
+int iIncorrectAnswers = 0;
 
 int main(void) {
     system("clear");
@@ -36,14 +38,15 @@ void MainDisplay(void) {
 }
 
 void Questions(int Category) {
+    int iSelection = 0;
+
     switch(Category) {
         default:
             printf("Error: Not a valid option");
             MainDisplay(); 
         break;
         case 1:
-            int iSelection = 0;
-
+            iSelection = 0;
             do {
                 if(!(iSelection >= 1 && iSelection <= 4)) { 
                     printf("\nYou need to select a valid option\n"); 
@@ -59,11 +62,81 @@ void Questions(int Category) {
             } while(!(iSelection >= 1 && iSelection <= 4));
 
             if(iSelection == 1) {
-                AnswerTracker(true);
+                iCorrectAnswers++;
             }
             else {
-                AnswerTracker(false);
+                iCorrectAnswers--;
+            }
+        break;
+        case 2:
+            iSelection = 0;
+            do {
+                if(!(iSelection >= 1 && iSelection <= 4)) { 
+                    printf("\nYou need to select a valid option\n"); 
+                }
+                printf("\n\tVehicle Trivia Question.");
+                printf("\n\n\tThe vehicle manufacturer Volvo was founded in what country?\n");
+                printf("1. Sweden\n");
+                printf("2. Austria\n");
+                printf("3. Saudi Arabia\n");
+                printf("4. Switzerland\n");
+                scanf("%d", &iSelection);
+                system("clear");
+            } while(!(iSelection >= 1 && iSelection <= 4));
+
+            if(iSelection == 1) {
+                iCorrectAnswers++;
+            }
+            else {
+                iCorrectAnswers--;
+            }
+        break;
+        case 3:
+            iSelection = 0;
+            do {
+                if(!(iSelection >= 1 && iSelection <= 4)) { 
+                    printf("\nYou need to select a valid option\n"); 
+                }
+                printf("\n\tHistory Trivia Question.");
+                printf("\n\n\tOn the Apollo 11 moon mission, which astronaut stayed aloft in the command module while Neil Armstrong and Buzz Aldrin walked on the moon?\n");
+                printf("1. Michael Collins\n");
+                printf("2. Buzz Aldrin\n");
+                printf("3. James McDuff\n");
+                printf("4. Niel Armstrong\n");
+                scanf("%d", &iSelection);
+                system("clear");
+            } while(!(iSelection >= 1 && iSelection <= 4));
+
+            if(iSelection == 1) {
+                iCorrectAnswers++;
+            }
+            else {
+                iCorrectAnswers--;
+            }
+        break;
+        case 4:
+            iSelection = 0;
+            do {
+                if(!(iSelection >= 1 && iSelection <= 4)) { 
+                    printf("\nYou need to select a valid option\n"); 
+                }
+                printf("\n\tMovie Trivia Question.");
+                printf("\n\n\tWhat car did the character James Bond drive, in the film, Casino Royale?\n");
+                printf("1. Aston Martin DBS\n");
+                printf("2. Aston Martin DB9\n");
+                printf("3. Aston Martin DB11\n");
+                printf("4. Aston Martin DB5\n");
+                scanf("%d", &iSelection);
+                system("clear");
+            } while(!(iSelection >= 1 && iSelection <= 4));
+            
+        if(iSelection == 1) {
+                iCorrectAnswers++;
+            }
+            else {
+                iCorrectAnswers--;
             }
         break;
     } 
 }
+
