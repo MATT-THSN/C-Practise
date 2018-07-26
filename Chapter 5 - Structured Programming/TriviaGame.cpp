@@ -40,14 +40,13 @@ int main(void) {
 }
 
 void Questions(int Category) {
-    int iSelection = 0;
+    int iSelection = 1;
 
     switch(Category) {
         default:
             printf("Error: Not a valid option");
         break;
         case 1:
-            iSelection = 0;
             do {
                 if(!(iSelection >= 1 && iSelection <= 4)) { 
                     printf("\nYou need to select a valid option\n"); 
@@ -70,7 +69,6 @@ void Questions(int Category) {
             }
         break;
         case 2:
-            iSelection = 0;
             do {
                 if(!(iSelection >= 1 && iSelection <= 4)) { 
                     printf("\nYou need to select a valid option\n"); 
@@ -93,7 +91,6 @@ void Questions(int Category) {
             }
         break;
         case 3:
-            iSelection = 0;
             do {
                 if(!(iSelection >= 1 && iSelection <= 4)) { 
                     printf("\nYou need to select a valid option\n"); 
@@ -116,7 +113,6 @@ void Questions(int Category) {
             }
         break;
         case 4:
-            iSelection = 0;
             do {
                 if(!(iSelection >= 1 && iSelection <= 4)) { 
                     printf("\nYou need to select a valid option\n"); 
