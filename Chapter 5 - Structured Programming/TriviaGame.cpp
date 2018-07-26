@@ -30,11 +30,17 @@ void MainDisplay(void) {
     printf("\n\tVehicle Trivia: Enter \'2\'");
     printf("\n\tHistory Trivia: Enter \'3\'");
     printf("\n\tMovie Trivia: Enter \'4\'\n\n");
+    printf("\n\tQUIT: Enter \'5\'");
     printf("Selection: ");
-    
     scanf("%d", &iSelection);
+    
     system("clear");
-    Questions(iSelection);
+    if(iSelection < 5) {
+        Questions(iSelection);
+    }
+    else {
+        EndingDisplay();
+    }
 }
 
 void Questions(int Category) {
@@ -140,3 +146,8 @@ void Questions(int Category) {
     } 
 }
 
+void EndingDisplay() {
+    system("clear");
+    printf("\n\tThanks for playing my game!");
+    printf("\n\n\tYou had %d correct answers and %d wrong answers.", iCorrectAnswers, iIncorrectAnswers);
+}
