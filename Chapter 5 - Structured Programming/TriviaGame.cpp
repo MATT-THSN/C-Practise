@@ -24,8 +24,8 @@ int main(void) {
     printf("\n\tAnimal Trivia: Enter \'1\'");
     printf("\n\tVehicle Trivia: Enter \'2\'");
     printf("\n\tHistory Trivia: Enter \'3\'");
-    printf("\n\tMovie Trivia: Enter \'4\'\n\n");
-    printf("\n\tQUIT: Enter \'5\'");
+    printf("\n\tMovie Trivia: Enter \'4\'");
+    printf("\n\tQUIT: Enter \'5\'\n\n");
     printf("Selection: ");
     scanf("%d", &iSelection);
     
@@ -45,7 +45,6 @@ void Questions(int Category) {
     switch(Category) {
         default:
             printf("Error: Not a valid option");
-            MainDisplay(); 
         break;
         case 1:
             iSelection = 0;
