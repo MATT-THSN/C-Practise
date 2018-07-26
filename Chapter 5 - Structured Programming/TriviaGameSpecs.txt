@@ -5,3 +5,25 @@ Trivia Game Specs:
 User picks a category, is asked a single question for that category
 The game tracks what answers the user gets correct and wrong
 When game ends, display how many answers were answered correctly and incorrectly 
+
+Questions:
+
+Animal Trivia
+
+What spiny venous fish, common in home aquariums, has become an invasive species in the Caribbean Sea and U.S. Atlantic coastal waters
+Lionfish
+
+Vehicle Trivia
+
+The vehicle manufacturer Volvo was founded in what country?
+Sweden
+
+History Trivia
+
+On the Apollo 11 moon mission, which astronaut stayed aloft in the command module while Neil Armstrong and Buzz Aldrin walked on the moon?
+Michael Collins
+
+Movie Trivia
+
+What car did the character James Bond drive, in the film, Casino Royale?
+Aston Martin DBS
