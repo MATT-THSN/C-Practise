@@ -55,10 +55,11 @@ void Questions(int Category) {
                 }
                 printf("\n\tAnimal Trivia Question.");
                 printf("\n\n\tWhat spiny venous fish, common in home aquariums, has become an invasive species in the Caribbean Sea and U.S. Atlantic coastal waters?\n");
-                printf("1. Lion Fish\n");
-                printf("2. Cat Fish\n");
-                printf("3. Gold Fish\n");
-                printf("4. Clown Fish\n");
+                printf("\t1. Lion Fish\n");
+                printf("\t2. Cat Fish\n");
+                printf("\t3. Gold Fish\n");
+                printf("\t4. Clown Fish\n");
+                printf("\n\tSelection: ");
                 scanf("%d", &iSelection);
                 system("clear");
             } while(!(iSelection >= 1 && iSelection <= 4));
@@ -77,10 +78,11 @@ void Questions(int Category) {
                 }
                 printf("\n\tVehicle Trivia Question.");
                 printf("\n\n\tThe vehicle manufacturer Volvo was founded in what country?\n");
-                printf("1. Sweden\n");
-                printf("2. Austria\n");
-                printf("3. Saudi Arabia\n");
-                printf("4. Switzerland\n");
+                printf("\t1. Sweden\n");
+                printf("\t2. Austria\n");
+                printf("\t3. Saudi Arabia\n");
+                printf("\t4. Switzerland\n");
+                printf("\n\tSelection: ");
                 scanf("%d", &iSelection);
                 system("clear");
             } while(!(iSelection >= 1 && iSelection <= 4));
@@ -99,10 +101,11 @@ void Questions(int Category) {
                 }
                 printf("\n\tHistory Trivia Question.");
                 printf("\n\n\tOn the Apollo 11 moon mission, which astronaut stayed aloft in the command module while Neil Armstrong and Buzz Aldrin walked on the moon?\n");
-                printf("1. Michael Collins\n");
-                printf("2. Buzz Aldrin\n");
-                printf("3. James McDuff\n");
-                printf("4. Niel Armstrong\n");
+                printf("\t1. Michael Collins\n");
+                printf("\t2. Buzz Aldrin\n");
+                printf("\t3. James McDuff\n");
+                printf("\t4. Niel Armstrong\n");
+                printf("\n\tSelection: ");
                 scanf("%d", &iSelection);
                 system("clear");
             } while(!(iSelection >= 1 && iSelection <= 4));
@@ -121,10 +124,11 @@ void Questions(int Category) {
                 }
                 printf("\n\tMovie Trivia Question.");
                 printf("\n\n\tWhat car did the character James Bond drive, in the film, Casino Royale?\n");
-                printf("1. Aston Martin DBS\n");
-                printf("2. Aston Martin DB9\n");
-                printf("3. Aston Martin DB11\n");
-                printf("4. Aston Martin DB5\n");
+                printf("\t1. Aston Martin DBS\n");
+                printf("\t2. Aston Martin DB9\n");
+                printf("\t3. Aston Martin DB11\n");
+                printf("\t4. Aston Martin DB5\n");
+                printf("\n\tSelection: ");
                 scanf("%d", &iSelection);
                 system("clear");
             } while(!(iSelection >= 1 && iSelection <= 4));
