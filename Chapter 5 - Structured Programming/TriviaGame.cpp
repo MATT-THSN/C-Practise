@@ -26,7 +26,7 @@ int main(void) {
     printf("\n\tHistory Trivia: Enter \'3\'");
     printf("\n\tMovie Trivia: Enter \'4\'");
     printf("\n\tQUIT: Enter \'5\'\n\n");
-    printf("Selection: ");
+    printf("\tSelection: ");
     scanf("%d", &iSelection);
     
     system("clear");
