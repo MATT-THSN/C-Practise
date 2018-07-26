@@ -142,13 +142,7 @@ void Questions(int Category) {
 }
 
 void EndingDisplay() {
-    int iCurTime = time(NULL);
-    int iNewTime;
     system("clear");
-
-    do {
-        printf("\n\tThanks for playing my game!");
-        printf("\n\n\tYou had %d correct answers and %d wrong answers.", iCorrectAnswers, iIncorrectAnswers);
-        iNewTime = time(NULL);
-    } while((iNewTime - iCurTime) < 3);
+    printf("\n\tThanks for playing my game!");
+    printf("\n\n\tYou had %d correct answers and %d wrong answers.\n", iCorrectAnswers, iIncorrectAnswers);
 }
