@@ -11,6 +11,7 @@
 
 void Questions(int Category);
 void EndingDisplay(void);
+void PointAllocator(void);
 
 int iCorrectAnswers = 0;
 int iIncorrectAnswers = 0;
@@ -41,6 +42,15 @@ int main(void) {
     }
 }
 
+void PointAllocator(int selection) {
+    if(selection == 1) {
+        iCorrectAnswers++;
+    }
+    else {
+        iIncorrectAnswers++;
+    }
+}
+
 void Questions(int Category) {
     int iSelection = 1;
 
@@ -63,13 +73,7 @@ void Questions(int Category) {
                 scanf("%d", &iSelection);
                 system("clear");
             } while(!(iSelection >= 1 && iSelection <= 4));
-
-            if(iSelection == 1) {
-                iCorrectAnswers++;
-            }
-            else {
-                iIncorrectAnswers++;
-            }
+            PointAllocator(iSelection);
         break;
         case 2:
             do {
@@ -86,13 +90,7 @@ void Questions(int Category) {
                 scanf("%d", &iSelection);
                 system("clear");
             } while(!(iSelection >= 1 && iSelection <= 4));
-
-            if(iSelection == 1) {
-                iCorrectAnswers++;
-            }
-            else {
-                iIncorrectAnswers++;
-            }
+            PointAllocator(iSelection);
         break;
         case 3:
             do {
@@ -109,13 +107,7 @@ void Questions(int Category) {
                 scanf("%d", &iSelection);
                 system("clear");
             } while(!(iSelection >= 1 && iSelection <= 4));
-
-            if(iSelection == 1) {
-                iCorrectAnswers++;
-            }
-            else {
-                iIncorrectAnswers++;
-            }
+            PointAllocator(iSelection); 
         break;
         case 4:
             do {
@@ -132,13 +124,7 @@ void Questions(int Category) {
                 scanf("%d", &iSelection);
                 system("clear");
             } while(!(iSelection >= 1 && iSelection <= 4));
-            
-        if(iSelection == 1) {
-                iCorrectAnswers++;
-            }
-            else {
-                iIncorrectAnswers++;
-            }
+            PointAllocator(iSelection);
         break;
     } 
 }
