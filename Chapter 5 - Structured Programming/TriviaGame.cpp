@@ -67,7 +67,7 @@ void Questions(int Category) {
                 iCorrectAnswers++;
             }
             else {
-                iCorrectAnswers--;
+                iIncorrectAnswers++;
             }
         break;
         case 2:
@@ -89,7 +89,7 @@ void Questions(int Category) {
                 iCorrectAnswers++;
             }
             else {
-                iCorrectAnswers--;
+                iIncorrectAnswers++;
             }
         break;
         case 3:
@@ -111,7 +111,7 @@ void Questions(int Category) {
                 iCorrectAnswers++;
             }
             else {
-                iCorrectAnswers--;
+                iIncorrectAnswers++;
             }
         break;
         case 4:
@@ -133,7 +133,7 @@ void Questions(int Category) {
                 iCorrectAnswers++;
             }
             else {
-                iCorrectAnswers--;
+                iIncorrectAnswers++;
             }
         break;
     } 
