@@ -13,22 +13,42 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+///////// VARIABLES
 int iTenNums[10] = {0};
+int iuserOption = 0;
 
-void MenuSys();
+///////// FUNCTION PROTOTYPES
+int MenuSys();
 
 int main(void) {
-
     printf("\n\tThis program asks for 10 numbers and can sort them for you");
     printf("\n\tGive me 10 numbers you'd like me to store: ");
     scanf("%d%d%d%d%d%d%d%d%d%d", &iTenNums[0], &iTenNums[1], &iTenNums[2], &iTenNums[3], &iTenNums[4], &iTenNums[5], &iTenNums[6], &iTenNums[7], &iTenNums[8], &iTenNums[9]);
 
-    for (int x = 0; x < 10; x++) {
-        printf("\n\t[%d]", iTenNums[x]);
+    switch(MenuSys())
+    {
+        case 1: 
+        system("clear");
+        printf("\n\tDisplaying numbers in Ascending Order...\n");
+        break;
+
+        case 2:
+        system("clear");
+        printf("\n\tDisplaying numbers in Descending Order...\n");
+        break;
     }
-    getchar();
 }
 
-void MenuSys() {
+///////// FUNCTION DEFINITIONS
+int MenuSys() {
+    int tmp = 0;
 
+    system("clear");
+    printf("\n\t1. Display the numbers in Ascending order");
+    printf("\n\t2. Display the numbers in Descending order");
+    do {
+        printf("\n\tEnter 1 or 2 to make a selection: ");
+        scanf("%d", &tmp);
+    } while(tmp < 1 || tmp > 2);
+    return tmp;
 };
