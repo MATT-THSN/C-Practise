@@ -21,6 +21,8 @@ int iuserOption = 0;
 int MenuSys();
 void AscFix();
 void DescFix();
+void GreaterThan(int g, int l);
+void LesserThan();
 
 int main(void) {
     printf("\n\tThis program asks for 10 numbers and can sort them for you");
@@ -32,11 +34,13 @@ int main(void) {
         case 1: 
         system("clear");
         printf("\n\tDisplaying numbers in Ascending Order...\n");
+        AscFix();
         break;
 
         case 2:
         system("clear");
         printf("\n\tDisplaying numbers in Descending Order...\n");
+        DescFix();
         break;
     }
 }
@@ -53,4 +57,26 @@ int MenuSys() {
         scanf("%d", &tmp);
     } while(tmp < 1 || tmp > 2);
     return tmp;
+};
+
+void GreaterThan(int g, int l) {
+    int tmp = 0;
+    if (iTenNums[g] > iTenNums[l]) {
+        tmp = iTenNums[g];
+        iTenNums[g] = iTenNums[l];
+        iTenNums[l] = iTenNums[g];
+    }
+};
+
+void AscFix() {
+    int tmp = 0;
+    int iStore = 0;
+
+    do { 
+        GreaterThan(0, 1);
+    } while(tmp == 1);
+};
+
+void DescFix() {
+
 };
