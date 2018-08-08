@@ -21,8 +21,8 @@ int iuserOption = 0;
 int MenuSys();
 void AscFix();
 void DescFix();
-int GreaterThan(int g, int l);
-int LesserThan();
+int AscSorter(int g, int l);
+int DescSorter(int g, int l);
 
 int main(void) {
     printf("\n\tThis program asks for 10 numbers and can sort them for you");
@@ -59,7 +59,17 @@ int MenuSys() {
     return tmp;
 };
 
-int GreaterThan(int g, int l) {
+int AscSorter(int g, int l) {
+    int tmp = 0;
+    if (iTenNums[g] > iTenNums[l]) {
+        tmp = iTenNums[g];
+        iTenNums[g] = iTenNums[l];
+        iTenNums[l] = iTenNums[g];
+        return 1;
+    }
+};
+
+int DescSorter(int g, int l) {
     int tmp = 0;
     if (iTenNums[g] > iTenNums[l]) {
         tmp = iTenNums[g];
@@ -72,15 +82,15 @@ int GreaterThan(int g, int l) {
 void AscFix() {
     int tmp = 0;
     do { 
-        tmp = GreaterThan(0, 1);
-        tmp = GreaterThan(1, 2);
-        tmp = GreaterThan(2, 3);
-        tmp = GreaterThan(3, 4);
-        tmp = GreaterThan(4, 5);
-        tmp = GreaterThan(5, 6);
-        tmp = GreaterThan(6, 7);
-        tmp = GreaterThan(7, 8);
-        tmp = GreaterThan(8, 9);
+        tmp = AscSorter(0, 1);
+        tmp = AscSorter(1, 2);
+        tmp = AscSorter(2, 3);
+        tmp = AscSorter(3, 4);
+        tmp = AscSorter(4, 5);
+        tmp = AscSorter(5, 6);
+        tmp = AscSorter(6, 7);
+        tmp = AscSorter(7, 8);
+        tmp = AscSorter(8, 9);
     } while(tmp == 1);
 };
 
