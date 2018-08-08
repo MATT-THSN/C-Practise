@@ -21,7 +21,7 @@ int iuserOption = 0;
 int MenuSys();
 void AscFix();
 void DescFix();
-int AscSorter(int g, int l);
+int AscSorter(int lowerNumVal, int higherNumVal);
 int DescSorter(int g, int l);
 
 int main(void) {
@@ -59,12 +59,12 @@ int MenuSys() {
     return tmp;
 };
 
-int AscSorter(int g, int l) {
+int AscSorter(int lowerNumVal, int higherNumVal) {
     int tmp = 0;
-    if (iTenNums[g] > iTenNums[l]) {
-        tmp = iTenNums[g];
-        iTenNums[g] = iTenNums[l];
-        iTenNums[l] = iTenNums[g];
+    if (iTenNums[lowerNumVal] > iTenNums[higherNumVal]) {
+        tmp = iTenNums[lowerNumVal];
+        iTenNums[lowerNumVal] = iTenNums[higherNumVal];
+        iTenNums[higherNumVal] = iTenNums[lowerNumVal];
         return 1;
     }
 };
