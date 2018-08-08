@@ -74,7 +74,7 @@ int MenuSys() {
 // DESC: Checks a number against another, if second is highest, positions are swapped
 int AscSorter(int lv, int hv) {
     int tmp = 0;
-    if (iTenNums[lv] > iTenNums[hv]) {
+    if (iTenNums[lv] < iTenNums[hv]) {
         tmp = iTenNums[lv];
         iTenNums[lv] = iTenNums[hv];
         iTenNums[hv] = tmp;
