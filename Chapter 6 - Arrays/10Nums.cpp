@@ -21,7 +21,7 @@ int iuserOption = 0;
 int MenuSys();
 void AscFix();
 void DescFix();
-int AscSorter(int lowerNumVal, int higherNumVal);
+int AscSorter(int lv, int hv);
 int DescSorter(int g, int l);
 
 int main(void) {
@@ -59,22 +59,26 @@ int MenuSys() {
     return tmp;
 };
 
-int AscSorter(int lowerNumVal, int higherNumVal) {
+// FUNCTION: AscSorter
+// DESC: Checks a number against another, if second is highest, positions are swapped
+int AscSorter(int lv, int hv) {
     int tmp = 0;
-    if (iTenNums[lowerNumVal] > iTenNums[higherNumVal]) {
-        tmp = iTenNums[lowerNumVal];
-        iTenNums[lowerNumVal] = iTenNums[higherNumVal];
-        iTenNums[higherNumVal] = iTenNums[lowerNumVal];
+    if (iTenNums[lv] > iTenNums[hv]) {
+        tmp = iTenNums[lv];
+        iTenNums[lv] = iTenNums[hv];
+        iTenNums[hv] = tmp;
         return 1;
     }
 };
 
-int DescSorter(int g, int l) {
+// FUNCTION: DescSorter
+// DESC: Checks a number against another, if second is lower, positions are swapped
+int DescSorter(int lv, int hv) {
     int tmp = 0;
-    if (iTenNums[g] > iTenNums[l]) {
-        tmp = iTenNums[g];
-        iTenNums[g] = iTenNums[l];
-        iTenNums[l] = iTenNums[g];
+    if (iTenNums[lv] < iTenNums[hv]) {
+        tmp = iTenNums[lv];
+        iTenNums[lv] = iTenNums[hv];
+        iTenNums[hv] = tmp;
         return 1;
     }
 };
