@@ -71,7 +71,6 @@ int GreaterThan(int g, int l) {
 
 void AscFix() {
     int tmp = 0;
-    int iStore = 0;
     do { 
         tmp = GreaterThan(0, 1);
         tmp = GreaterThan(1, 2);
