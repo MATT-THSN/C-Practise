@@ -86,7 +86,7 @@ int AscSorter(int lv, int hv) {
 // DESC: Checks a number against another, if second is lower, positions are swapped
 int DescSorter(int lv, int hv) {
     int tmp = 0;
-    if (iTenNums[lv] < iTenNums[hv]) {
+    if (iTenNums[lv] > iTenNums[hv]) {
         tmp = iTenNums[lv];
         iTenNums[lv] = iTenNums[hv];
         iTenNums[hv] = tmp;
@@ -100,15 +100,15 @@ int DescSorter(int lv, int hv) {
 void AscFix() {
     int tmp = 0;
     do { 
-        tmp = AscSorter(0, 1);
-        tmp = AscSorter(1, 2);
-        tmp = AscSorter(2, 3);
-        tmp = AscSorter(3, 4);
-        tmp = AscSorter(4, 5);
-        tmp = AscSorter(5, 6);
-        tmp = AscSorter(6, 7);
-        tmp = AscSorter(7, 8);
-        tmp = AscSorter(8, 9);
+        AscSorter(0, 1);
+        AscSorter(1, 2);
+        AscSorter(2, 3);
+        AscSorter(3, 4);
+        AscSorter(4, 5);
+        AscSorter(5, 6);
+        AscSorter(6, 7);
+        AscSorter(7, 8);
+        AscSorter(8, 9);
     } while(tmp == 1);
 };
 
