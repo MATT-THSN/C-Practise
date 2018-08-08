@@ -35,12 +35,12 @@ int main(void) {
         system("clear");
         printf("\n\tDisplaying numbers in Ascending Order...\n");
         AscFix();
-        printf("%d %d %d %d %d %d %d %d %d %d", 
-            &iTenNums[0], &iTenNums[1], 
-            &iTenNums[2], &iTenNums[3], 
-            &iTenNums[4], &iTenNums[5], 
-            &iTenNums[6], &iTenNums[7], 
-            &iTenNums[8], &iTenNums[9]);
+        printf("\n\t%d %d %d %d %d %d %d %d %d %d", 
+            iTenNums[0], iTenNums[1], 
+            iTenNums[2], iTenNums[3], 
+            iTenNums[4], iTenNums[5], 
+            iTenNums[6], iTenNums[7], 
+            iTenNums[8], iTenNums[9]);
         break;
 
         case 2:
