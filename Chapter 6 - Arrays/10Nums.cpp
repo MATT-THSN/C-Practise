@@ -80,6 +80,9 @@ int AscSorter(int lv, int hv) {
         iTenNums[hv] = tmp;
         return 1;
     }
+    else {
+        return 0;
+    }
 };
 
 // FUNCTION: DescSorter
