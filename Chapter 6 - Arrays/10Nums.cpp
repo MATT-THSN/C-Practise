@@ -40,7 +40,7 @@ int main(void) {
         system("clear");
         printf("\n\tDisplaying numbers in Ascending Order...\n");
         AscFix();
-        printf("\n\t%d %d %d %d %d %d %d %d %d %d", 
+        printf("\n\t%d %d %d %d %d %d %d %d %d %d\n", 
             iTenNums[0], iTenNums[1], 
             iTenNums[2], iTenNums[3], 
             iTenNums[4], iTenNums[5], 
