@@ -99,5 +99,16 @@ void AscFix() {
 };
 
 void DescFix() {
-
+    int tmp = 0;
+    do { 
+        tmp = DescSorter(0, 1);
+        tmp = DescSorter(1, 2);
+        tmp = DescSorter(2, 3);
+        tmp = DescSorter(3, 4);
+        tmp = DescSorter(4, 5);
+        tmp = DescSorter(5, 6);
+        tmp = DescSorter(6, 7);
+        tmp = DescSorter(7, 8);
+        tmp = DescSorter(8, 9);
+    } while(tmp == 1);
 };
