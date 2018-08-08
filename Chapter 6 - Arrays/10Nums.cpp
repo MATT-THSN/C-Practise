@@ -19,6 +19,8 @@ int iuserOption = 0;
 
 ///////// FUNCTION PROTOTYPES
 int MenuSys();
+void AscFix();
+void DescFix();
 
 int main(void) {
     printf("\n\tThis program asks for 10 numbers and can sort them for you");
