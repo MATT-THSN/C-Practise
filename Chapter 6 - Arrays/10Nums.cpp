@@ -81,7 +81,6 @@ int AscSorter(int lv, int hv) {
         return 1;
     }
     else {
-        printf("\nNot achieved");
         return 0;
     }
 };
@@ -93,26 +92,19 @@ int DescSorter(int lv, int hv) {
 
 void AscFix() {
     int tmp = 0;
+    int iCounter = 0;
     do { 
+        iCounter++;
         tmp = AscSorter(0, 1);
-        printf("\n01");
         tmp = AscSorter(1, 2);
-        printf("\n12");
         tmp = AscSorter(2, 3);
-        printf("\n23");
         tmp = AscSorter(3, 4);
-        printf("\n34");
         tmp = AscSorter(4, 5);
-        printf("\n45");
         tmp = AscSorter(5, 6);
-        printf("\n56");
         tmp = AscSorter(6, 7);
-        printf("\n67");
         tmp = AscSorter(7, 8);
-        printf("\n78");
         tmp = AscSorter(8, 9);
-        printf("\n89");
-    } while(tmp == 1);
+    } while(iCounter != 10);
 };
 
 void DescFix() {
