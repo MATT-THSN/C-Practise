@@ -58,6 +58,27 @@ int main(void) {
     }
 }
 
-void ViewGPA(){}
-void ValInsert(){}
-void AvgCalc(){}
+void ViewGPA(){
+    for(int i = 0; i < 30; i++) {
+        if(fValues[i] != 0) {
+            printf("%.1f ", fValues[i]);
+        }
+    }
+}
+
+void ValInsert(){
+    int tmp = 0;
+    do {
+        for(int i = 0; i < 30; i++) {
+            if(fValues[i] == 0) {
+                scanf("%f", &fValues[i]);
+            }
+        }
+        printf("\n\n\tDo you want to add another GPA?\n\t1 for Yes\n\t2 for No\n\n");
+        scanf("%d", &tmp);
+    } while(tmp == 0);
+}
+
+void AvgCalc(){
+
+}
