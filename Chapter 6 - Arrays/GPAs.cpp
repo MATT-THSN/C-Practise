@@ -15,16 +15,44 @@
 
 //VARIABLES
 float fValues[30] = {0};
+bool keepRunning = true;
 
 //FUNCTIONS
 void ViewGPA();
 void ValInsert();
 void AvgCalc();
 
+/*
+*   MAIN FUNCTION
+*   Runs the U.I for program interaction
+*   Returns void
+*/
 int main(void) {
-    int iMenuSelector = 0;
-    printf("\n\tGPA Application");
-    printf("\n\n\t\'1\' - View Stored GPAs");
-    printf("\n\t\'2\' - Add a GPA Value");
-    printf("\n\n\tMake a selection: ");
+    while (keepRunning) {        
+        int iMenuSelector = 0;
+        printf("\n\tGPA Application");
+        printf("\n\n\t\'1\' - View Stored GPAs");
+        printf("\n\t\'2\' - Add a GPA Value");
+        printf("\n\n\tMake a selection: ");
+        scanf("%d", &iMenuSelector);
+
+        switch(iMenuSelector) 
+        {
+            case 1:
+            ViewGPA();
+            break;
+
+            case 2:
+            ValInsert();
+            break;
+
+            case 3:
+            keepRunning = !keepRunning;
+            break;
+
+            default:
+            printf("\n\n\tNot a valid option");
+            break;
+        }
+    }
 }
