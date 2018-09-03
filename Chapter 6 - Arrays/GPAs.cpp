@@ -17,9 +17,14 @@
 float fValues[30] = {0};
 
 //FUNCTIONS
+void ViewGPA();
 void ValInsert();
 void AvgCalc();
 
 int main(void) {
-
+    int iMenuSelector = 0;
+    printf("\n\tGPA Application");
+    printf("\n\n\t\'1\' - View Stored GPAs");
+    printf("\n\t\'2\' - Add a GPA Value");
+    printf("\n\n\tMake a selection: ");
 }
