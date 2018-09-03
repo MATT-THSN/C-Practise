@@ -125,6 +125,7 @@ void ValInsert(){
         break;
 
         case 2:
+        system("clear");
         break;
     }
 }
