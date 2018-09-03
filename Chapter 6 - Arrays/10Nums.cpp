@@ -81,6 +81,7 @@ int AscSorter(int lv, int hv) {
         return 1;
     }
     else {
+        printf("\nNot achieved");
         return 0;
     }
 };
@@ -88,30 +89,29 @@ int AscSorter(int lv, int hv) {
 // FUNCTION: DescSorter
 // DESC: Checks a number against another, if second is lower, positions are swapped
 int DescSorter(int lv, int hv) {
-    int tmp = 0;
-    if (iTenNums[lv] > iTenNums[hv]) {
-        tmp = iTenNums[lv];
-        iTenNums[lv] = iTenNums[hv];
-        iTenNums[hv] = tmp;
-        return 1;
-    }
-    else {
-        return 0;
-    }
 };
 
 void AscFix() {
     int tmp = 0;
     do { 
         tmp = AscSorter(0, 1);
+        printf("\n01");
         tmp = AscSorter(1, 2);
+        printf("\n12");
         tmp = AscSorter(2, 3);
+        printf("\n23");
         tmp = AscSorter(3, 4);
+        printf("\n34");
         tmp = AscSorter(4, 5);
+        printf("\n45");
         tmp = AscSorter(5, 6);
+        printf("\n56");
         tmp = AscSorter(6, 7);
+        printf("\n67");
         tmp = AscSorter(7, 8);
+        printf("\n78");
         tmp = AscSorter(8, 9);
+        printf("\n89");
     } while(tmp == 1);
 };
 
