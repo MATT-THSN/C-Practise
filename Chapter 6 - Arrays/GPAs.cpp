@@ -33,6 +33,7 @@ int main(void) {
         printf("\n\tGPA Application");
         printf("\n\n\t\'1\' - View Stored GPAs");
         printf("\n\t\'2\' - Add a GPA Value");
+        printf("\n\t\'3\' - Quit program");
         printf("\n\n\tMake a selection: ");
         scanf("%d", &iMenuSelector);
 
@@ -51,8 +52,12 @@ int main(void) {
             break;
 
             default:
-            printf("\n\n\tNot a valid option");
+            printf("\n\n\tNot a valid option\n");
             break;
         }
     }
 }
+
+void ViewGPA(){}
+void ValInsert(){}
+void AvgCalc(){}
