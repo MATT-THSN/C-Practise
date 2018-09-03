@@ -52,6 +52,12 @@ int main(void) {
         system("clear");
         printf("\n\tDisplaying numbers in Descending Order...\n");
         DescFix();
+        printf("\n\t%d %d %d %d %d %d %d %d %d %d\n", 
+            iTenNums[0], iTenNums[1], 
+            iTenNums[2], iTenNums[3], 
+            iTenNums[4], iTenNums[5], 
+            iTenNums[6], iTenNums[7], 
+            iTenNums[8], iTenNums[9]);
         break;
     }
 }
@@ -88,6 +94,16 @@ int AscSorter(int lv, int hv) {
 // FUNCTION: DescSorter
 // DESC: Checks a number against another, if second is lower, positions are swapped
 int DescSorter(int lv, int hv) {
+    int tmp = 0;
+    if (iTenNums[lv] < iTenNums[hv]) {
+        tmp = iTenNums[lv];
+        iTenNums[lv] = iTenNums[hv];
+        iTenNums[hv] = tmp;
+        return 1;
+    }
+    else {
+        return 0;
+    }
 };
 
 void AscFix() {
@@ -109,6 +125,7 @@ void AscFix() {
 
 void DescFix() {
     int tmp = 0;
+    int iCounter = 0;
     do { 
         tmp = DescSorter(0, 1);
         tmp = DescSorter(1, 2);
