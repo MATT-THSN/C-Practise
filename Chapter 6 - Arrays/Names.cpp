@@ -17,20 +17,21 @@
 char aNames[50][5];
 
 //FUNCTION PROTOTYPES
-void arrayRead();
+void stringRead(int val);
 
 int main(void) {
     int tmp = 0;
     while(true) {
         switch (tmp) {
             case 0: 
-                system("clear");
+                //system("clear");
                 printf("\n\tAdd a name1: ");
-                scanf(" %[^\n]", &aNames[tmp++]);
+                scanf(" %s", &aNames[tmp++]);
+                stringRead(0);
             break;
 
             case 1: 
-                system("clear");
+                //system("clear");
                 printf("\n\tAdd a name2: ");
                 scanf(" %[^\n]", &aNames[tmp++]);
             break;
@@ -62,6 +63,14 @@ int main(void) {
     }
 }
 
-void arrayRead() {
-    
+void stringRead(int val) {
+    for(int x = 0; x < 50; x++) {
+        //printf("Before");
+        printf("%c", aNames[x][val]);
+        //printf("After");
+    }
+    printf("Here");
 }
+
+
+
