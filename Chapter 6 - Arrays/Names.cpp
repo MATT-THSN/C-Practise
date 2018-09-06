@@ -83,16 +83,4 @@ void debug() {
     for(int x = 0; x < 50; x++) {
         printf("%c", aNames[0][x]);
     }
-    for(int x = 0; x < 50; x++) {
-        printf("%c", aNames[x][1]);
-    }
-    for(int x = 0; x < 50; x++) {
-        printf("%c", aNames[x][2]);
-    }
-    for(int x = 0; x < 50; x++) {
-        printf("%c", aNames[x][3]);
-    }
-    for(int x = 0; x < 50; x++) {
-        printf("%c", aNames[x][4]);
-    }
 }
