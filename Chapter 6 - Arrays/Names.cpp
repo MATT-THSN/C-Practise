@@ -26,6 +26,7 @@ int main(void) {
 
     printf("\n\tAdd a name: ");            
     scanf(" %[^\n]%*c", &aNames[0][0]);
+    //Input the first name
 
     do {
         do {
@@ -35,7 +36,9 @@ int main(void) {
             printf("\n\tQuit                             #3");
             printf("\n\n\tEnter choice: "); 
             scanf("%d", &iUserSel);
+            //Choose from one of the options 
         } while (iUserSel < 0 || iUserSel > 3);
+        //Keep asking until valid selection is made
         
         if(iUserSel == 1) {
             switch(index) {
@@ -44,6 +47,7 @@ int main(void) {
                     printf("\n\tAdd a name: ");
                     scanf(" %[^\n]%*c", &aNames[1][0]);
                     index++;
+                    //Asking for a second name
                 break;
 
                 case 1:
@@ -51,6 +55,7 @@ int main(void) {
                     printf("\n\tAdd a name: ");
                     scanf(" %[^\n]%*c", &aNames[2][0]);
                     index++;
+                    //Asking for a third name
                 break;
 
                 case 2:
@@ -58,6 +63,7 @@ int main(void) {
                     printf("\n\tAdd a name: ");
                     scanf(" %[^\n]%*c", &aNames[3][0]);
                     index++;
+                    //Asking for a forth name
                 break;
 
                 case 3:
@@ -65,11 +71,13 @@ int main(void) {
                     printf("\n\tAdd a name: ");
                     scanf(" %[^\n]%*c", &aNames[4][0]);
                     index++;
+                    //Asking for a fifth name
                 break;
 
                 default:
                     system("clear");
                     printf("\n\tERROR Cannot add anymore names!");
+                    //If trying to add a sixth name, deny and display message
                 break;
             }
         }
@@ -80,6 +88,7 @@ int main(void) {
                     printf("\n\tNames currently stored: ");
                     stringRead(0);
                 break;
+                //Displays 1 name if only 1 name has been entered
 
                 case 1:
                     system("clear");
@@ -87,6 +96,7 @@ int main(void) {
                     stringRead(0);
                     stringRead(1);
                 break;
+                //Displays 2 name if only 2 name has been entered
 
                 case 2:
                     system("clear");
@@ -95,6 +105,7 @@ int main(void) {
                     stringRead(1);
                     stringRead(2);
                 break;
+                //Displays 3 name if only 3 name has been entered
 
                 case 3:
                     system("clear");
@@ -104,6 +115,7 @@ int main(void) {
                     stringRead(2);
                     stringRead(3);
                 break;
+                //Displays 4 name if only 4 name has been entered
 
                 case 4:
                     system("clear");
@@ -114,13 +126,16 @@ int main(void) {
                     stringRead(3);
                     stringRead(4);
                 break;
+                //Displays 5 name if only 5 name has been entered
             }
         }
         else if(iUserSel == 3) {
             progRun = !progRun;
+            //Trigger program quit
         }
         else {
             printf("Not a valid option");
+            //Display error if bad selection is made
         }
         
     } while (progRun);
@@ -136,4 +151,5 @@ void stringRead(int val) {
     for(int x = 0; x < 50; x++) {
         printf("%c", aNames[val][x]);
     }
+    //Display character and loop
 }
