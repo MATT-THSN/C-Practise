@@ -32,8 +32,9 @@ int main(void) {
 
             case 1: 
                 //system("clear");
-                printf("\n\tAdd a name2: ");
-                scanf(" %[^\n]", &aNames[tmp++]);
+                printf("\n\tAdd a name1: ");
+                scanf(" %s", &aNames[tmp++]);
+                stringRead(1);
             break;
 
             case 2: 
