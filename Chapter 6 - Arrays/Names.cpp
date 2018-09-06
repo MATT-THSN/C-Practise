@@ -26,7 +26,6 @@ int main(void) {
 
     printf("\n\tAdd a name: ");            
     scanf(" %s", &aNames[0][0]);
-    index++;
 
     do {
         do {
