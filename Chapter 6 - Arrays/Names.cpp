@@ -1,6 +1,6 @@
 /* 
 * Programming Practise File
-* Desc: Store 10 Numbers
+* Desc: Store 5 names
 * Date Modified: 06/09/2018
 * Author: Matthew Thompson
 */
