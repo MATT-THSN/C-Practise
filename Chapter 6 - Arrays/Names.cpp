@@ -30,7 +30,7 @@ int main(void) {
     do {
         do {
             iUserSel = 0;
-            printf("\n\tDo you want to add another name? #1");
+            printf("\n\n\tDo you want to add another name? #1");
             printf("\n\tDo you want to view names added? #2");
             printf("\n\tQuit                             #3");
             printf("\n\n\tEnter choice: "); 
@@ -39,28 +39,28 @@ int main(void) {
         
         if(iUserSel == 1) {
             switch(index) {
-                case 1: 
+                case 0: 
                     system("clear");
                     printf("\n\tAdd a name: ");
                     scanf(" %s", &aNames[1][0]);
                     index++;
                 break;
 
-                case 2:
+                case 1:
                     system("clear");
                     printf("\n\tAdd a name: ");
                     scanf(" %s", &aNames[2][0]);
                     index++;
                 break;
 
-                case 3:
+                case 2:
                     system("clear");
                     printf("\n\tAdd a name: ");
                     scanf(" %s", &aNames[3][0]);
                     index++;
                 break;
 
-                case 4:
+                case 3:
                     system("clear");
                     printf("\n\tAdd a name: ");
                     scanf(" %s", &aNames[4][0]);
@@ -76,7 +76,6 @@ int main(void) {
         else if(iUserSel == 2) {
             switch(index) {
                 case 0:
-                printf("Case 0");
                     stringRead(0);
                 break;
 
@@ -92,7 +91,6 @@ int main(void) {
                 break;
 
                 case 3:
-                printf("Case 3");
                     stringRead(0);
                     stringRead(1);
                     stringRead(2);
@@ -100,7 +98,6 @@ int main(void) {
                 break;
 
                 case 4:
-                printf("Case 4");
                     stringRead(0);
                     stringRead(1);
                     stringRead(2);
