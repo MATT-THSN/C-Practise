@@ -32,7 +32,7 @@ int main(void) {
 
             case 1: 
                 //system("clear");
-                printf("\n\tAdd a name1: ");
+                printf("\n\tAdd a name2: ");
                 scanf(" %s", &aNames[tmp++]);
                 stringRead(1);
             break;
@@ -40,30 +40,37 @@ int main(void) {
             case 2: 
                 system("clear");
                 printf("\n\tAdd a name3: ");
-                scanf(" %[^\n]", &aNames[tmp++]);
+                scanf(" %s", &aNames[tmp++]);
+                stringRead(2);
             break;
 
             case 3: 
                 system("clear");
                 printf("\n\tAdd a name4: ");
-                scanf(" %[^\n]", &aNames[tmp++]);
+                scanf(" %s", &aNames[tmp++]);
+                stringRead(3);
             break;
 
             case 4: 
                 system("clear");
                 printf("\n\tAdd a name5: ");
-                scanf(" %[^\n]", &aNames[tmp++]);
+                scanf(" %s", &aNames[tmp++]);
+                stringRead(4);
             break;
 
             default: 
                 system("clear");
-                printf("\n\tAdd a named: ");
-                scanf(" %[^\n]", &aNames[tmp++]);
+                printf("\n\tERROR Cannot add anymore names!");
             break;
         }
     }
 }
 
+/*
+* FUNCTION DECLARATION
+* Loops through at prints ever character in name
+* Returns VOID
+*/
 void stringRead(int val) {
     for(int x = 0; x < 50; x++) {
         //printf("Before");
