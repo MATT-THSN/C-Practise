@@ -27,36 +27,38 @@ int main(void) {
     while(true) {
         switch (index) {
             case 0: 
-                printf("\nIMA HERO\n");
                 printf("\n\tAdd a name1:");
                 scanf(" %s", &aNames[0][tmp]);
-                debug();
-                //stringRead(0);
-                printf("\nIMA FINA\n");
+                stringRead(0);
+                index++;
             break;
 
             case 1: 
                 printf("\n\tAdd a name2: ");
                 scanf(" %s", &aNames[tmp][1]);
                 stringRead(1);
+                index++;
             break;
 
             case 2:
                 printf("\n\tAdd a name3: ");
                 scanf(" %s", &aNames[tmp][2]);
                 stringRead(2);
+                index++;
             break;
 
             case 3:
                 printf("\n\tAdd a name4: ");
                 scanf(" %s", &aNames[tmp][3]);
                 stringRead(3);
+                index++;
             break;
 
             case 4:
                 printf("\n\tAdd a name5: ");
                 scanf(" %s", &aNames[tmp][4]);
                 stringRead(4);
+                index++;
             break;
 
             default:
@@ -73,14 +75,6 @@ int main(void) {
 */
 void stringRead(int val) {
     for(int x = 0; x < 50; x++) {
-        printf("B-");
-        printf("%c", aNames[x][val]);
-        printf("-A");
-    }
-}
-
-void debug() {
-    for(int x = 0; x < 50; x++) {
-        printf("%c", aNames[0][x]);
+        printf("%c", aNames[val][x]);
     }
 }
