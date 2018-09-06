@@ -14,9 +14,54 @@
 #include <stdlib.h>
 
 //VARIABLES
+char aNames[50][5];
 
 //FUNCTION PROTOTYPES
+void arrayRead();
 
 int main(void) {
+    int tmp = 0;
+    while(true) {
+        switch (tmp) {
+            case 0: 
+                system("clear");
+                printf("\n\tAdd a name1: ");
+                scanf(" %[^\n]", &aNames[tmp++]);
+            break;
 
+            case 1: 
+                system("clear");
+                printf("\n\tAdd a name2: ");
+                scanf(" %[^\n]", &aNames[tmp++]);
+            break;
+
+            case 2: 
+                system("clear");
+                printf("\n\tAdd a name3: ");
+                scanf(" %[^\n]", &aNames[tmp++]);
+            break;
+
+            case 3: 
+                system("clear");
+                printf("\n\tAdd a name4: ");
+                scanf(" %[^\n]", &aNames[tmp++]);
+            break;
+
+            case 4: 
+                system("clear");
+                printf("\n\tAdd a name5: ");
+                scanf(" %[^\n]", &aNames[tmp++]);
+            break;
+
+            default: 
+                system("clear");
+                printf("\n\tAdd a named: ");
+                scanf(" %[^\n]", &aNames[tmp++]);
+            break;
+        }
+    }
+}
+
+void arrayRead() {
+    
 }
