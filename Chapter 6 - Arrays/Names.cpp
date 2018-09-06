@@ -14,7 +14,7 @@
 #include <stdlib.h>
 
 //VARIABLES
-char aNames[5][50];
+char aNames[5][100];
 int index = 0;
 int iUserSel = 0;
 bool progRun = true;
@@ -25,7 +25,7 @@ void stringRead(int val);
 int main(void) {
 
     printf("\n\tAdd a name: ");            
-    scanf(" %s", &aNames[0][0]);
+    scanf(" %[^\n]%*c", &aNames[0][0]);
 
     do {
         do {
@@ -42,28 +42,28 @@ int main(void) {
                 case 0: 
                     system("clear");
                     printf("\n\tAdd a name: ");
-                    scanf(" %s", &aNames[1][0]);
+                    scanf(" %[^\n]%*c", &aNames[1][0]);
                     index++;
                 break;
 
                 case 1:
                     system("clear");
                     printf("\n\tAdd a name: ");
-                    scanf(" %s", &aNames[2][0]);
+                    scanf(" %[^\n]%*c", &aNames[2][0]);
                     index++;
                 break;
 
                 case 2:
                     system("clear");
                     printf("\n\tAdd a name: ");
-                    scanf(" %s", &aNames[3][0]);
+                    scanf(" %[^\n]%*c", &aNames[3][0]);
                     index++;
                 break;
 
                 case 3:
                     system("clear");
                     printf("\n\tAdd a name: ");
-                    scanf(" %s", &aNames[4][0]);
+                    scanf(" %[^\n]%*c", &aNames[4][0]);
                     index++;
                 break;
 
