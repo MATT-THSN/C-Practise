@@ -76,21 +76,29 @@ int main(void) {
         else if(iUserSel == 2) {
             switch(index) {
                 case 0:
+                    system("clear");
+                    printf("\n\tNames currently stored: ");
                     stringRead(0);
                 break;
 
                 case 1:
+                    system("clear");
+                    printf("\n\tNames currently stored: ");
                     stringRead(0);
                     stringRead(1);
                 break;
 
                 case 2:
+                    system("clear");
+                    printf("\n\tNames currently stored: ");
                     stringRead(0);
                     stringRead(1);
                     stringRead(2);
                 break;
 
                 case 3:
+                    system("clear");
+                    printf("\n\tNames currently stored: ");
                     stringRead(0);
                     stringRead(1);
                     stringRead(2);
@@ -98,6 +106,8 @@ int main(void) {
                 break;
 
                 case 4:
+                    system("clear");
+                    printf("\n\tNames currently stored: ");
                     stringRead(0);
                     stringRead(1);
                     stringRead(2);
