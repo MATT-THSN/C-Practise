@@ -24,42 +24,36 @@ int main(void) {
     while(true) {
         switch (tmp) {
             case 0: 
-                //system("clear");
                 printf("\n\tAdd a name1: ");
-                scanf(" %s", &aNames[tmp++]);
+                scanf(" %s", &aNames[tmp++][0]);
                 stringRead(0);
             break;
 
             case 1: 
-                //system("clear");
                 printf("\n\tAdd a name2: ");
-                scanf(" %s", &aNames[tmp++]);
+                scanf(" %s", &aNames[tmp++][1]);
                 stringRead(1);
             break;
 
-            case 2: 
-                system("clear");
+            case 2:
                 printf("\n\tAdd a name3: ");
-                scanf(" %s", &aNames[tmp++]);
+                scanf(" %s", &aNames[tmp++][2]);
                 stringRead(2);
             break;
 
-            case 3: 
-                system("clear");
+            case 3:
                 printf("\n\tAdd a name4: ");
-                scanf(" %s", &aNames[tmp++]);
+                scanf(" %s", &aNames[tmp++][3]);
                 stringRead(3);
             break;
 
-            case 4: 
-                system("clear");
+            case 4:
                 printf("\n\tAdd a name5: ");
-                scanf(" %s", &aNames[tmp++]);
+                scanf(" %s", &aNames[tmp++][4]);
                 stringRead(4);
             break;
 
-            default: 
-                system("clear");
+            default:
                 printf("\n\tERROR Cannot add anymore names!");
             break;
         }
@@ -73,11 +67,10 @@ int main(void) {
 */
 void stringRead(int val) {
     for(int x = 0; x < 50; x++) {
-        //printf("Before");
+        printf("Before");
         printf("%c", aNames[x][val]);
-        //printf("After");
+        printf("After");
     }
-    printf("Here");
 }
 
 
