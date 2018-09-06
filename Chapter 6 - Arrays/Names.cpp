@@ -15,57 +15,107 @@
 
 //VARIABLES
 char aNames[5][50];
+int index = 0;
+int tmp = 0;
+int iUserSel = 0;
+bool progRun = true;
 
 //FUNCTION PROTOTYPES
 void stringRead(int val);
 
-void debug();
-
 int main(void) {
-    int index = 0;
-    int tmp = 0;
-    while(true) {
-        switch (index) {
-            case 0: 
-                printf("\n\tAdd a name1:");
-                scanf(" %s", &aNames[0][tmp]);
-                stringRead(0);
-                index++;
-            break;
 
-            case 1: 
-                printf("\n\tAdd a name2: ");
-                scanf(" %s", &aNames[tmp][1]);
-                stringRead(1);
-                index++;
-            break;
+    printf("\n\tAdd a name: ");            
+    scanf(" %s", &aNames[0][tmp]);
+    index++;
 
-            case 2:
-                printf("\n\tAdd a name3: ");
-                scanf(" %s", &aNames[tmp][2]);
-                stringRead(2);
-                index++;
-            break;
+    do {
+        do {
+            iUserSel = 0;
+            printf("\n\tDo you want to add another name? #1");
+            printf("\n\tDo you want to view names added? #2");
+            printf("\n\tQuit                             #3");
+            printf("\n\n\tEnter choice: "); 
+            scanf("%d", &iUserSel);
+        } while (iUserSel < 0 || iUserSel > 3);
+        
+        if(iUserSel == 1) {
+            switch(index) {
+                case 1: 
+                    system("clear");
+                    printf("\n\tAdd a name: ");
+                    scanf(" %s", &aNames[1][tmp]);
+                    index++;
+                break;
 
-            case 3:
-                printf("\n\tAdd a name4: ");
-                scanf(" %s", &aNames[tmp][3]);
-                stringRead(3);
-                index++;
-            break;
+                case 2:
+                    system("clear");
+                    printf("\n\tAdd a name: ");
+                    scanf(" %s", &aNames[tmp][2]);
+                    index++;
+                break;
 
-            case 4:
-                printf("\n\tAdd a name5: ");
-                scanf(" %s", &aNames[tmp][4]);
-                stringRead(4);
-                index++;
-            break;
+                case 3:
+                    system("clear");
+                    printf("\n\tAdd a name: ");
+                    scanf(" %s", &aNames[tmp][3]);
+                    index++;
+                break;
 
-            default:
-                printf("\n\tERROR Cannot add anymore names!");
-            break;
+                case 4:
+                    system("clear");
+                    printf("\n\tAdd a name: ");
+                    scanf(" %s", &aNames[tmp][4]);
+                    index++;
+                break;
+
+                default:
+                    system("clear");
+                    printf("\n\tERROR Cannot add anymore names!");
+                break;
+            }
         }
-    }
+        else if(iUserSel == 2) {
+            switch(index) {
+                case 0:
+                    stringRead(0);
+                break;
+
+                case 1:
+                    stringRead(0);
+                    stringRead(1);
+                break;
+
+                case 2:
+                    stringRead(0);
+                    stringRead(1);
+                    stringRead(2);
+                break;
+
+                case 3:
+                    stringRead(0);
+                    stringRead(1);
+                    stringRead(2);
+                    stringRead(3);
+                break;
+
+                case 4:
+                    stringRead(0);
+                    stringRead(1);
+                    stringRead(2);
+                    stringRead(3);
+                    stringRead(4);
+                break;
+            }
+        }
+        else if(iUserSel == 3) {
+            progRun = !progRun;
+        }
+        else {
+            printf("Not a valid option");
+        }
+        
+    } while (progRun);
 }
 
 /*
@@ -74,6 +124,7 @@ int main(void) {
 * Returns VOID
 */
 void stringRead(int val) {
+    printf("\n\t");
     for(int x = 0; x < 50; x++) {
         printf("%c", aNames[val][x]);
     }
