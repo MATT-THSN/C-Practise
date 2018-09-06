@@ -77,6 +77,7 @@ int main(void) {
         else if(iUserSel == 2) {
             switch(index) {
                 case 0:
+                printf("Case 0");
                     stringRead(0);
                 break;
 
@@ -92,6 +93,7 @@ int main(void) {
                 break;
 
                 case 3:
+                printf("Case 3");
                     stringRead(0);
                     stringRead(1);
                     stringRead(2);
@@ -99,6 +101,7 @@ int main(void) {
                 break;
 
                 case 4:
+                printf("Case 4");
                     stringRead(0);
                     stringRead(1);
                     stringRead(2);
