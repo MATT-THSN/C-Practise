@@ -51,8 +51,8 @@ int main(void) {
         }
         else {
             printf("\nPLAYER 0s Turn\n");
-            iSquareX = (rand() % 2 + 1);
-            iSquareY = (rand() % 2 + 1);
+            iSquareX = (rand() % 3 + 1);
+            iSquareY = (rand() % 3 + 1);
 
             if ( verifySelection(iSquareX, iSquareY, iCurrentPlayer) == 1) {iCurrentPlayer = 2;}
             else {iCurrentPlayer = 1;}
