@@ -59,10 +59,10 @@ void displayBoard() {
     printf("\n\t|\t|\n");
     printf("\t|\t|\n");
     printf("%c\t|%c\t|%c\n", board[0], board[1], board[2]);
-    printf("----|-----|----\n");
+    printf("--------|-------|------\n");
     printf("\t|\t|\n");
     printf("%c\t|%c\t|%c\n", board[3], board[4], board[5]);
-    printf("----|-----|----\n");
+    printf("--------|-------|------\n");
     printf("\t|\t|\n");
     printf("%c\t|%c\t|%c\n", board[6], board[7], board[8]);
     printf("\t|\t|\n");
