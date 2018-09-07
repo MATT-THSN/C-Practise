@@ -7,6 +7,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+#include <ctype.h>
 
 /*
     - Tic-Tac-Toe
@@ -29,6 +31,7 @@ int main(void) {
     int x = 0;
     int iSquareX = 0;
     int iSquareY = 0;
+    srand(time(NULL));
 
     for( y = 0; y < 3; y++ ) {
         for( x = 0; x < 3; x++ ) { 
@@ -47,9 +50,10 @@ int main(void) {
             else { iCurrentPlayer = 2; }
         }
         else {
-            printf("\nPLAYER 0\n");
-            printf("Enter an available square number (1-3 & 1-3): ");
-            scanf("%d%d", &iSquareX, &iSquareY); 
+            printf("\nPLAYER 0s Turn\n");
+            iSquareX = (rand() % 2 + 1);
+            iSquareY = (rand() % 2 + 1);
+
             if ( verifySelection(iSquareX, iSquareY, iCurrentPlayer) == 1) {iCurrentPlayer = 2;}
             else {iCurrentPlayer = 1;}
         } //END IF
