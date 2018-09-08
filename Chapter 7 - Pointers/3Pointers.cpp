@@ -19,24 +19,30 @@
 #include <stdio.h>
 
 //Function Prototypes
-void Print1(const int *);
+void Print1(const int *, const float *, const char *);
 
 
 int main(void) {
+    //Dec/Initialisation of variables
     int iNumber = 20;
     float fNumber = 0.0;
-    char cCharacter = '\0';
+    char cCharacter = 'C';
 
+    //Dec/Initialisation of pointers
     int *iPtr = &iNumber;
     float *fPtr = &fNumber;
     char *cPtr = &cCharacter;
 
-    Print1(&iNumber);
+    //Calling functions
+    Print1(&iNumber, &fNumber, &cCharacter);
 
 
     return 0;
 } //END Main
 
-void Print1(const int * x) {
+//FUNCTION Declaration
+void Print1(const int *x, const float *y, const char *c) {
     printf("\n\t%d", *x);
+    printf("\n\t%f", *y);
+    printf("\n\t%c\n", *c);
 }
