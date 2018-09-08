@@ -17,14 +17,17 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 
 int main(void) {
+    srand(time(NULL));
     int iSelect = 0;
     int iStoredVal = 0;
     int *PointIntVal = &iStoredVal;
     bool bRun = true;
 
     do {
+        iStoredVal = rand() % 100;
         printf("\n\tPOINTER PROGRAM\n");
         printf("\n\tSelect a menu option: ");
         printf("\n\tEnter 1. Print pointer address");
@@ -36,17 +39,24 @@ int main(void) {
 
         switch(iSelect) {
             case 1: 
+                system("clear");
+                printf("\n\tPointer address: %p\n", PointIntVal);
             break;
 
             case 2: 
+                system("clear");
+                printf("\n\tInteger address: %p\n", &iStoredVal);
             break;
 
-            case 3: 
+            case 3:
+                system("clear");
+                printf("\n\tInteger value: %d\n", *PointIntVal);
             break;
 
             case 4:
-            printf("\n\tQuitting...");
-            bRun = !bRun;
+                system("clear");
+                printf("\n\tQuitting...");
+                bRun = !bRun;
             break;
 
             default:
