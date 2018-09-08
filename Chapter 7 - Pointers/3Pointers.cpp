@@ -20,6 +20,7 @@
 
 //Function Prototypes
 void Print1(const int *, const float *, const char *);
+void Print2(const int *, const float *, const char *);
 
 
 int main(void) {
@@ -35,14 +36,22 @@ int main(void) {
 
     //Calling functions
     Print1(&iNumber, &fNumber, &cCharacter);
+    Print2(iPtr, fPtr, cPtr);
 
-
-    return 0;
 } //END Main
 
 //FUNCTION Declaration
 void Print1(const int *x, const float *y, const char *c) {
+    printf("\n\tPrinting literal values");
     printf("\n\t%d", *x);
     printf("\n\t%f", *y);
     printf("\n\t%c\n", *c);
 }
+
+void Print2(const int * i, const float * f, const char * c) {
+    printf("\n\tPrinting memory address locations");
+    printf("\n\t%p", i);
+    printf("\n\t%p", f);
+    printf("\n\t%p\n", c);
+}
+
