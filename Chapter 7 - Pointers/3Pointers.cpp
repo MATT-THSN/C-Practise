@@ -21,6 +21,8 @@
 //Function Prototypes
 void Print1(const int *, const float *, const char *);
 void Print2(const int *, const float *, const char *);
+void Print3(const int *, const float *, const char *);
+void Print4(const int *, const float *, const char *);
 
 
 int main(void) {
@@ -37,21 +39,36 @@ int main(void) {
     //Calling functions
     Print1(&iNumber, &fNumber, &cCharacter);
     Print2(iPtr, fPtr, cPtr);
+    Print3(&iNumber, &fNumber, &cCharacter);
+    Print4(iPtr, fPtr, cPtr);
 
 } //END Main
 
 //FUNCTION Declaration
-void Print1(const int *x, const float *y, const char *c) {
-    printf("\n\tPrinting literal values");
-    printf("\n\t%d", *x);
-    printf("\n\t%f", *y);
+void Print1(const int *i, const float *f, const char *c) {
+    printf("\n\tPrinting variable values");
+    printf("\n\t%d", *i);
+    printf("\n\t%f", *f);
     printf("\n\t%c\n", *c);
 }
 
 void Print2(const int * i, const float * f, const char * c) {
-    printf("\n\tPrinting memory address locations");
+    printf("\n\tPrinting the value of pointers");
+    printf("\n\t%d", *i);
+    printf("\n\t%f", *f);
+    printf("\n\t%c\n", *c);
+}
+
+void Print3(const int * i, const float * f, const char * c) {
+    printf("\n\tPrinting the address of nonpointer variable");
     printf("\n\t%p", i);
     printf("\n\t%p", f);
     printf("\n\t%p\n", c);
 }
 
+void Print4(const int * i, const float * f, const char * c) {
+    printf("\n\tPrinting the address of nonpointer variable");
+    printf("\n\t%p", i);
+    printf("\n\t%p", f);
+    printf("\n\t%p\n", c);
+}
