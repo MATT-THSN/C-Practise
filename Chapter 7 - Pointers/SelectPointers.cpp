@@ -22,31 +22,36 @@ int main(void) {
     int iSelect = 0;
     int iStoredVal = 0;
     int *PointIntVal = &iStoredVal;
+    bool bRun = true;
 
-    printf("\n\tPOINTER PROGRAM\n");
-    printf("\n\tSelect a menu option: ");
-    printf("\n\tEnter 1. Print pointer address");
-    printf("\n\tEnter 2. Print integer address");
-    printf("\n\tEnter 3. Print integer value");
-    printf("\n\tEnter 4. Quit");
-    printf("\n\tSelection: ");
-    scanf("%d", &iSelect);
+    do {
+        printf("\n\tPOINTER PROGRAM\n");
+        printf("\n\tSelect a menu option: ");
+        printf("\n\tEnter 1. Print pointer address");
+        printf("\n\tEnter 2. Print integer address");
+        printf("\n\tEnter 3. Print integer value");
+        printf("\n\tEnter 4. Quit");
+        printf("\n\tSelection: ");
+        scanf("%d", &iSelect);
 
-    switch(iSelect) {
-        case 1: 
-        break;
+        switch(iSelect) {
+            case 1: 
+            break;
 
-        case 2: 
-        break;
+            case 2: 
+            break;
 
-        case 3: 
-        break;
+            case 3: 
+            break;
 
-        case 4: 
-        break;
+            case 4:
+            printf("\n\tQuitting...");
+            bRun = !bRun;
+            break;
 
-        default:
-        printf("\n\n\tNot a valid option");
-        break;
-    }
+            default:
+            printf("\n\tNot a valid option");
+            break;
+        }
+    } while (bRun);
 }
