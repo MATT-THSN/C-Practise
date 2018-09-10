@@ -12,6 +12,30 @@
         * Displays the user's name in uppercase
 */
 
-int main(void) {
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 
+//FUNCTION PROTOTYPES
+void charcount(char *, int *);
+
+//BEGIN MAIN
+int main(void) {
+    int numOfChars = 0;
+    char userName[20];
+
+    printf("\n\tPlease tell me your name: ");
+    scanf("%s", userName);
+    charcount(userName, &numOfChars);
+    printf("\n\tThe number of characters in your name = %d", numOfChars);
+    printf("\n\tYour name is: %s", userName);
+}
+//END MAIN
+
+void charcount(char *name, int *count) {
+    for (int x = 0; x <= strlen(name); x++) {
+        name[x] = toupper(name[x]);
+        *count = x;
+    }
 }
