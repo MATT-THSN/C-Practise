@@ -35,10 +35,10 @@ void strSort(char state[4][11]) {
     do {
         count = 0;
         //COMP 1 & 2
-        if((strcmp(&state[0][0], &state[1][0]) > 0)) {
+        if((strcmp(&state[0][0], &state[1][0]) < 0)) {
             count++;
         }
-        else if(strcmp(&state[0][0], &state[1][0]) < 0) { 
+        else if(strcmp(&state[0][0], &state[1][0]) > 0) { 
             strcpy(tmpStore[0], state[1]);
             strcpy(tmpStore[1], state[0]);
             strcpy(state[0], tmpStore[0]);
@@ -46,10 +46,10 @@ void strSort(char state[4][11]) {
         }
         else { count++; }
         //COMP 2 & 3
-        if(strcmp(&state[1][0], &state[2][0]) > 0) {
+        if(strcmp(&state[1][0], &state[2][0]) < 0) {
             count++;
         }
-        else if(strcmp(&state[1][0], &state[2][0]) < 0) {
+        else if(strcmp(&state[1][0], &state[2][0]) > 0) {
             strcpy(tmpStore[0], state[2]);
             strcpy(tmpStore[1], state[1]);
             strcpy(state[1], tmpStore[0]);
@@ -57,10 +57,10 @@ void strSort(char state[4][11]) {
         }
         else { count++; }
         //COMP 3 & 4
-        if(strcmp(&state[2][0], &state[3][0]) > 0) {
+        if(strcmp(&state[2][0], &state[3][0]) < 0) {
             count++;
         }
-        else if(strcmp(&state[2][0], &state[3][0]) < 0) {
+        else if(strcmp(&state[2][0], &state[3][0]) > 0) {
             strcpy(tmpStore[0], state[3]);
             strcpy(tmpStore[1], state[2]);
             strcpy(state[2], tmpStore[0]);
