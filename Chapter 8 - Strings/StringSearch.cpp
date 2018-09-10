@@ -19,28 +19,28 @@
 
 
 int main(void) {
-    char *sentence = "When the going gets tough, the tough stay put!";
-    char *comparision[3][10] = { "Going", "tou", "ay put!" };
+    char sentence[] = "When the going gets tough, the tough stay put!";
+    char comparision[3][10] = { "Going", "tou", "ay put!" };
 
-    if (strstr(comparision[0], sentence) != NULL) {
+    if (strstr(sentence, comparision[0]) != NULL) {
         printf("\n\tFound! %s is in the sentence!", comparision[0]);
     }
     else {
         printf("\n\tDid not find. %s is not in the sentence", comparision[0]);
     }
 
-    if(strstr(comparision[1], sentence) != NULL) {
+    if(strstr(sentence, comparision[1]) != NULL) {
         printf("\n\tFound! %s is in the sentence!", comparision[1]);
     }
     else {
         printf("\n\tDid not find. %s is not in the sentence", comparision[1]);
     }
 
-    if(strstr(comparision[2], sentence) != NULL) {
+    if(strstr(sentence, comparision[2]) != NULL) {
         printf("\n\tFound! %s is in the sentence!", comparision[2]);
     }
     else {
-        printf("\n\tDid not find. %s is not in the sentence", comparision[2]);
+        printf("\n\tDid not find. %s is not in the sentence\n", comparision[2]);
     }
 
 }
