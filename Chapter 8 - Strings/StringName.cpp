@@ -33,6 +33,11 @@ int main(void) {
 }
 //END MAIN
 
+/*
+    - Function Definition
+        DESC: Counts the number of characters in a string and makes all characters upper case
+        ARGUMENTS: Character pointer and Integer pointer
+*/
 void charcount(char *name, int *count) {
     for (int x = 0; x <= strlen(name); x++) {
         name[x] = toupper(name[x]);
