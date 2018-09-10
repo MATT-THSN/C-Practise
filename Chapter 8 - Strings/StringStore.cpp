@@ -15,6 +15,18 @@
     each state's name in alphabetical order using the strcmp() function.
 */
 
-int main(void) {
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
+void strSort(const char *);
+
+int main(void) {
+    char names[4][11] = {"Florida", "Oregon", "California", "Georgia"};
+}
+
+void strSort(const char * state) {
+    if(strcmp(&state[0], &state[1])) {
+
+    }
 }
