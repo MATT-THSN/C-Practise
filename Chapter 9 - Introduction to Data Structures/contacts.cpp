@@ -14,7 +14,7 @@
 
 typedef struct contacts {
     char names[10];
-    char number;
+    char number[10];
 } cont;
 
 #include <stdio.h>
@@ -65,8 +65,9 @@ void addContactsBasic(cont * friends, int * contsAdded) {
     printf("\n\tEnter name of friend: ");
     scanf("%s", friends[*contsAdded].names);
     printf("\n\tEnter number of friend: ");
-    scanf("%s", &friends[*contsAdded].number);
+    scanf("%s", friends[*contsAdded].number);
     printf("\n\tContact Added!");
+    *contsAdded += 1;
 }
 
 //Lets users add contacts
@@ -75,7 +76,6 @@ void addContacts(cont * friends, int * contsAdded) {
         //Each case adds a new friend
         case 0:
             addContactsBasic(friends, *&contsAdded);
-            *contsAdded = *contsAdded + 1;
         break;
 
         case 1:
@@ -103,6 +103,6 @@ void addContacts(cont * friends, int * contsAdded) {
 //Allows user to print stored contacts
 void printContacts(cont * friends, const int * contsAdded) {
     for(int x = 0; x < *contsAdded; x++) {
-        printf("\n\tName of contact: %s\n\tNumber of contact: %s", &friends[x].names, &friends[x].number);
+        printf("\n\tName of contact: %s\n\tNumber of contact: %s", friends[x].names, friends[x].number);
     }
 }
