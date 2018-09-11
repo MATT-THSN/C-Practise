@@ -21,6 +21,7 @@ typedef struct contacts {
 #include <stdlib.h>
 
 void addContacts(cont *, int *);
+void addContactsBasic(cont *, int *);
 void printContacts(cont *, const int *);
 
 int main(void) {
@@ -60,19 +61,23 @@ int main(void) {
     } while(run);
 }
 
+void addContactsBasic(cont * friends, int * contsAdded) {
+    system("clear");
+    printf("\n\tEnter name of friend: ");
+    scanf("%s", friends[*contsAdded].names);
+    printf("\n\tEnter number of friend: ");
+    scanf("%s", &friends[*contsAdded].number);
+    system("clear");
+    printf("\n\tContact Added!");
+    *contsAdded = *contsAdded + 1;
+}
+
 //Lets users add contacts
 void addContacts(cont * friends, int * contsAdded) {
     switch(*contsAdded) {
         //Each case adds a new friend
         case 0:
-            system("clear");
-            printf("\n\tEnter name of friend: ");
-            scanf("%s", friends[*contsAdded].names);
-            printf("\n\tEnter number of friend: ");
-            scanf("%s", &friends[*contsAdded].number);
-            system("clear");
-            printf("\n\tContact Added!");
-            *contsAdded = *contsAdded + 1;
+            addContactsBasic(friends, *&contsAdded);
         break;
 
         case 1:
