@@ -14,14 +14,14 @@
 
 typedef struct contacts {
     char names[10];
-    int pNumber;
+    char number;
 } cont;
 
 #include <stdio.h>
 #include <stdlib.h>
 
-void addContacts(cont *);
-void printContacts(cont *);
+void addContacts(cont *, int *);
+void printContacts(cont *, const int *);
 
 int main(void) {
     //New instance of contacts struct
@@ -42,7 +42,7 @@ int main(void) {
         while(menSel > 0 && menSel < 4) {
             switch(menSel) {
                 case 1:
-                    printf("\n\tCall add friend func");
+                    addContacts(friends, &friendsAdded);
                     menSel = 0;
                 break;
 
@@ -58,4 +58,42 @@ int main(void) {
             }
         }
     } while(run);
+}
+
+//Lets users add contacts
+void addContacts(cont * friends, int * contsAdded) {
+    switch(*contsAdded) {
+        //Each case adds a new friend
+        case 0:
+            system("clear");
+            printf("\n\tEnter name of friend: ");
+            scanf("%s", friends[*contsAdded].names);
+            printf("\n\tEnter number of friend: ");
+            scanf("%s", &friends[*contsAdded].number);
+            system("clear");
+            printf("\n\tContact Added!");
+            *contsAdded = *contsAdded + 1;
+        break;
+
+        case 1:
+        break;
+
+        case 2:
+        break;
+
+        case 3:
+        break;
+
+        case 4:
+        break;
+
+        default:
+        printf("\n\tCan't add anymore contacts I'm afraid");
+        break;
+    }
+}
+
+//Allows user to print stored contacts
+void printContacts(cont *, const int *) {
+
 }
