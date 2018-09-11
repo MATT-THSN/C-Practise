@@ -103,7 +103,7 @@ void checkAnswer(char *string1, char string2[]) {
     //Compares two strings and checks if answer isn't null
     if (strstr(string1, string2) != 0 && string2[0] != 0) {
         //If correct print message
-        printf("\nGreat job!\n");
+        printf("\n\tGreat job!\n");
     }
     else {
         //Otherwise show loose message
