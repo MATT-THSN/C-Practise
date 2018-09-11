@@ -31,6 +31,7 @@ int main(void) {
 
     bool run = true;
     do {
+        menSel = 0;
         //Menu
         printf("\n\tCONTACTS APP\n");
         printf("\n\t#1 Add a friend");
@@ -40,7 +41,17 @@ int main(void) {
         //Run corresponding action after input
         while(menSel > 0 && menSel < 4) {
             switch(menSel) {
-                
+                case 1:
+                    printf("\n\tCall add friend func");
+                break;
+
+                case 2:
+                    printf("\n\tCall print friend contact func");
+                break;
+
+                case 3:
+                    run = !run;
+                break;
             }
         }
     } while(run);
