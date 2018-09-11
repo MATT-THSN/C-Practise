@@ -51,6 +51,7 @@ int main(void) {
     //Loop round until I valid option has been chosen
     do {
         scanf("%d", &selector);
+        //Set difficulty based on selection
         if (selector == 1) {
             difficulty = 6;
             break;
