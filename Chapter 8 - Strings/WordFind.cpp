@@ -38,11 +38,32 @@ int main(void) {
     int displayed = 0;
     int x;
     int startTime = 0;
-    int difficulty = 0;
+    int selector = 0;
+    int difficulty = 20;
     system("clear");
 
-    //App title
+    //Difficulty menu
     printf("\n\n\tWelcome to Word Find\n\n");
+    printf("\t#1 For Easy");
+    printf("\n\t#2 For Normal");
+    printf("\n\t#3 For Hard");
+    printf("\n\tChoose your difficulty: ");
+    //Loop round until I valid option has been chosen
+    do {
+        scanf("%d", &selector);
+        if (selector == 1) {
+            difficulty = 6;
+            break;
+        }
+        if (selector == 2) {
+            difficulty = 4;
+            break;
+        }
+        if (selector == 3) {
+            difficulty = 2;
+            break;
+        }
+    }  while (selector == 0 ||!(selector > 3) || !(selector < 0));
 
     //Set start time to current time
     startTime = time(NULL);
@@ -50,7 +71,7 @@ int main(void) {
     //Displays each string of garbled letters
     for(x = 0; x < 5; x++) {
         /* DISPLAY TEXT FOR FEW SECONDS */
-        while(startTime + 3 > time(NULL)) {
+        while(startTime + difficulty > time(NULL)) {
             if (displayed == 0) {
                 printf("\n\tFind a word in: \n\n");
                 printf("\t%s\n\n", strGame[x]);
