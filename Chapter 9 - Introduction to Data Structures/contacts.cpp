@@ -62,14 +62,11 @@ int main(void) {
 }
 
 void addContactsBasic(cont * friends, int * contsAdded) {
-    system("clear");
     printf("\n\tEnter name of friend: ");
     scanf("%s", friends[*contsAdded].names);
     printf("\n\tEnter number of friend: ");
     scanf("%s", &friends[*contsAdded].number);
-    system("clear");
     printf("\n\tContact Added!");
-    *contsAdded = *contsAdded + 1;
 }
 
 //Lets users add contacts
@@ -78,6 +75,7 @@ void addContacts(cont * friends, int * contsAdded) {
         //Each case adds a new friend
         case 0:
             addContactsBasic(friends, *&contsAdded);
+            *contsAdded = *contsAdded + 1;
         break;
 
         case 1:
@@ -104,9 +102,7 @@ void addContacts(cont * friends, int * contsAdded) {
 
 //Allows user to print stored contacts
 void printContacts(cont * friends, const int * contsAdded) {
-    printf("Pos 1");
-    for(int x = 0; x > 0 && x < *contsAdded; x++) {
-        printf("Pos 2");
+    for(int x = 0; x < *contsAdded; x++) {
         printf("\n\tName of contact: %s\n\tNumber of contact: %s", &friends[x].names, &friends[x].number);
     }
 }
