@@ -26,11 +26,11 @@ void checkAnswer(char *, char []);
 int main(void) {
     //Array of garbled letters with words inside
     char *strGame[5] = {
-        "ADELANGUAGEFERVZ0PIBMOU",
-        "ZBPOINTERSKLML00PMNOCOT",
-        "PODSTRINGGDIWHIEEICERLS",
-        "YVCPROGRAMMERWQKNULTHMD",
-        "UKUNIXFIMWXIZEQZINPUTEX"
+        "ADELANGUAGEFERVZ0PIBMOUSECURITY",
+        "ZBPOINTERSKLML00PMNOCOTKALI",
+        "PODSTRINGGDIWHIEEICERLSLINUX",
+        "YVCPROGRAMMERWQKNULTFORENSICSHMD",
+        "UKUNIXFIMWXIZEQZINPTYPEUTEX"
     };
 
     //Variables
