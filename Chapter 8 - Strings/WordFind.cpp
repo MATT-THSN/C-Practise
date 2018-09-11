@@ -88,6 +88,7 @@ int main(void) {
     printf("\n\tEnter word found: ");
     scanf("%s", answer);
 
+    /* Could remove redundant code by chucking bits into a function but will do that later so I can continue book */
     switch(x) {
         case 0:
             //Checking length of answer to ensure it's not a single character input
