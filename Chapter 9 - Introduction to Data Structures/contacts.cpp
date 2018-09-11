@@ -48,7 +48,7 @@ int main(void) {
                 break;
 
                 case 2:
-                    printf("\n\tCall print friend contact func");
+                    printContacts(friends, &friendsAdded);
                     menSel = 0;
                 break;
 
@@ -103,6 +103,10 @@ void addContacts(cont * friends, int * contsAdded) {
 }
 
 //Allows user to print stored contacts
-void printContacts(cont *, const int *) {
-
+void printContacts(cont * friends, const int * contsAdded) {
+    printf("Pos 1");
+    for(int x = 0; x > 0 && x < *contsAdded; x++) {
+        printf("Pos 2");
+        printf("\n\tName of contact: %s\n\tNumber of contact: %s", &friends[x].names, &friends[x].number);
+    }
 }
