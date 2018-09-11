@@ -74,21 +74,22 @@ int main(void) {
         /* DISPLAY TEXT FOR FEW SECONDS */
         while(startTime + difficulty > time(NULL)) {
             if (displayed == 0) {
+                system("clear");
                 printf("\n\tFind a word in: \n\n");
                 printf("\t%s\n\n", strGame[x]);
                 displayed = 1;
             } //End If
         } // End while loop
-    displayed = 0;
-    startTime = time(NULL);
     
     //User enters a word they think they saw
     system("clear");
     printf("\n\tEnter word found: ");
     scanf("%s", answer);
-
-    //Searches challenge string for the inputted answer
     checkAnswer(strGame[x], answer);
+
+    displayed = 0;
+    startTime = time(NULL);
+    //Searches challenge string for the inputted answer
     
     }// End for loop
     return 0;
@@ -96,6 +97,7 @@ int main(void) {
 
 void checkAnswer(char *string1, char string2[]) {
     int x;
+    int initialTime = time(NULL);
     /* Convert answer to UPPER CASE to perform a valid comparison */
     for (x = 0; x <= strlen(string2); x++) {
         string2[x] = toupper(string2[x]);
@@ -103,10 +105,16 @@ void checkAnswer(char *string1, char string2[]) {
     //Compares two strings and checks if answer isn't null
     if (strstr(string1, string2) != 0 && string2[0] != 0) {
         //If correct print message
-        printf("\n\tGreat job!\n");
+            printf("\n\tGreat job!\n");
+        while(initialTime + 3 > time(NULL)) {
+            //Holding for 3 seconds
+        }
     }
     else {
         //Otherwise show loose message
         printf("\nSorry, word not found!\n");
+        while(initialTime + 3 > time(NULL)) {
+            //Holding for 3 seconds
+        }
     }
 } // End Check Answer
