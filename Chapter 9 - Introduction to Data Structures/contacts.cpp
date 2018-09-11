@@ -81,15 +81,19 @@ void addContacts(cont * friends, int * contsAdded) {
         break;
 
         case 1:
+            addContactsBasic(friends, *&contsAdded);
         break;
 
         case 2:
+            addContactsBasic(friends, *&contsAdded);
         break;
 
         case 3:
+            addContactsBasic(friends, *&contsAdded);
         break;
 
         case 4:
+            addContactsBasic(friends, *&contsAdded);
         break;
 
         default:
