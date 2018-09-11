@@ -15,4 +15,33 @@
 typedef struct contacts {
     char names[10];
     int pNumber;
-} friends;
+} cont;
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void addContacts(cont *);
+void printContacts(cont *);
+
+int main(void) {
+    //New instance of contacts struct
+    cont friends[5] = {0};
+    int friendsAdded = 0;
+    int menSel = 0;
+
+    bool run = true;
+    do {
+        //Menu
+        printf("\n\tCONTACTS APP\n");
+        printf("\n\t#1 Add a friend");
+        printf("\n\t#2 Display contacts");
+        printf("\n\t#3 Quit");
+        scanf("%d", &menSel);
+        //Run corresponding action after input
+        while(menSel > 0 && menSel < 4) {
+            switch(menSel) {
+                
+            }
+        }
+    } while(run);
+}
