@@ -24,6 +24,7 @@
 void checkAnswer(char *, char []);
 
 int main(void) {
+    //Array of garbled letters with words inside
     char *strGame[5] = {
         "ADELANGUAGEFERVZ0PIBMOU",
         "ZBPOINTERSKLML00PMNOCOT",
@@ -32,32 +33,40 @@ int main(void) {
         "UKUNIXFIMWXIZEQZINPUTEX"
     };
 
+    //Variables
     char answer[80] = {0};
     int displayed = 0;
     int x;
     int startTime = 0;
+    int difficulty = 0;
     system("clear");
 
-    printf("\n\n\tWord Find\n\n");
+    //App title
+    printf("\n\n\tWelcome to Word Find\n\n");
+
+    //Set start time to current time
     startTime = time(NULL);
 
+    //Displays each string of garbled letters
     for(x = 0; x < 5; x++) {
         /* DISPLAY TEXT FOR FEW SECONDS */
         while(startTime + 3 > time(NULL)) {
             if (displayed == 0) {
-                printf("\nFind a word in: \n\n");
-                printf("%s\n\n", strGame[x]);
+                printf("\n\tFind a word in: \n\n");
+                printf("\t%s\n\n", strGame[x]);
                 displayed = 1;
             } //End If
         } // End while loop
-    
-    system("clear");
-    printf("\nEnter word found: ");
-    scanf("%s", answer);
-    checkAnswer(strGame[x], answer);
-
     displayed = 0;
     startTime = time(NULL);
+    
+    //User enters a word they think they saw
+    system("clear");
+    printf("\n\tEnter word found: ");
+    scanf("%s", answer);
+
+    //Searches challenge string for the inputted answer
+    checkAnswer(strGame[x], answer);
     
     }// End for loop
     return 0;
@@ -69,10 +78,13 @@ void checkAnswer(char *string1, char string2[]) {
     for (x = 0; x <= strlen(string2); x++) {
         string2[x] = toupper(string2[x]);
     }
+    //Compares two strings and checks if answer isn't null
     if (strstr(string1, string2) != 0 && string2[0] != 0) {
+        //If correct print message
         printf("\nGreat job!\n");
     }
     else {
+        //Otherwise show loose message
         printf("\nSorry, word not found!\n");
     }
 } // End Check Answer
