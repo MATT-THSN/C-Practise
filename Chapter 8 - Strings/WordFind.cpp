@@ -21,7 +21,7 @@
 #include <string.h>
 
 //Function Prototypes
-void checkAnswer(char *, char []);
+void checkAnswer(char *, char [], int *);
 
 int main(void) {
     //Array of garbled letters with words inside
@@ -40,6 +40,7 @@ int main(void) {
     int startTime = 0;
     int selector = 0;
     int difficulty = 20;
+    int pScore = 0;
     system("clear");
 
     //Difficulty menu
@@ -85,17 +86,18 @@ int main(void) {
     system("clear");
     printf("\n\tEnter word found: ");
     scanf("%s", answer);
-    checkAnswer(strGame[x], answer);
+    checkAnswer(strGame[x], answer, &pScore);
 
     displayed = 0;
     startTime = time(NULL);
     //Searches challenge string for the inputted answer
     
     }// End for loop
+    printf("\n\tYour final score is: %d", pScore);
     return 0;
 } //End main
 
-void checkAnswer(char *string1, char string2[]) {
+void checkAnswer(char *string1, char string2[], int *score) {
     int x;
     int initialTime = time(NULL);
     /* Convert answer to UPPER CASE to perform a valid comparison */
@@ -106,13 +108,15 @@ void checkAnswer(char *string1, char string2[]) {
     if (strstr(string1, string2) != 0 && string2[0] != 0) {
         //If correct print message
             printf("\n\tGreat job!\n");
+            *score += 1;
         while(initialTime + 3 > time(NULL)) {
             //Holding for 3 seconds
         }
     }
     else {
         //Otherwise show loose message
-        printf("\nSorry, word not found!\n");
+        printf("\n\tSorry, word not found!\n");
+        *score -= 1;
         while(initialTime + 3 > time(NULL)) {
             //Holding for 3 seconds
         }
