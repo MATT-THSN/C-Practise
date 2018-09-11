@@ -20,6 +20,7 @@ typedef struct contacts {
 #include <stdio.h>
 #include <stdlib.h>
 
+//FUNCTION PROTOTYPES
 void addContacts(cont *, int *);
 void addContactsBasic(cont *, int *);
 void printContacts(cont *, const int *);
@@ -27,10 +28,11 @@ void printContacts(cont *, const int *);
 int main(void) {
     //New instance of contacts struct
     cont friends[5] = {0};
+    //Variables
+    bool run = true;
     int friendsAdded = 0;
     int menSel = 0;
 
-    bool run = true;
     do {
         //Menu
         printf("\n\tCONTACTS APP\n");
@@ -39,6 +41,7 @@ int main(void) {
         printf("\n\t#3 Quit");
         printf("\n\tInput: ");
         scanf("%d", &menSel);
+
         //Run corresponding action after input
         while(menSel > 0 && menSel < 4) {
             switch(menSel) {
@@ -61,16 +64,28 @@ int main(void) {
     } while(run);
 }
 
+/*
+* FUNCTION DEFINTION
+* DESC: Adds contacts
+* Perams: instance of contacts array, number of contacts added 
+*/
 void addContactsBasic(cont * friends, int * contsAdded) {
+    system("clear");
+    printf("\n\tADDING CONTACT\n");
     printf("\n\tEnter name of friend: ");
     scanf("%s", friends[*contsAdded].names);
-    printf("\n\tEnter number of friend: ");
+    printf("\tEnter number of friend: ");
     scanf("%s", friends[*contsAdded].number);
-    printf("\n\tContact Added!");
+    system("clear");
+    printf("\n\tContact Added!\n");
     *contsAdded += 1;
 }
 
-//Lets users add contacts
+/*
+* FUNCTION DEFINTION
+* DESC: Switch that controls contact adding
+* Perams: instance of contacts array, number of contacts added 
+*/
 void addContacts(cont * friends, int * contsAdded) {
     switch(*contsAdded) {
         //Each case adds a new friend
@@ -95,14 +110,26 @@ void addContacts(cont * friends, int * contsAdded) {
         break;
 
         default:
-        printf("\n\tCan't add anymore contacts I'm afraid");
+        system("clear");
+        printf("\n\tCan't add anymore contacts I'm afraid\n");
         break;
     }
 }
 
-//Allows user to print stored contacts
+/*
+* FUNCTION DEFINTION
+* DESC: Prints stored contacts
+* Perams: instance of contacts array, number of contacts added 
+*/
 void printContacts(cont * friends, const int * contsAdded) {
-    for(int x = 0; x < *contsAdded; x++) {
-        printf("\n\tName of contact: %s\n\tNumber of contact: %s", friends[x].names, friends[x].number);
+    system("clear");
+    if (int x = 0 < *contsAdded) {
+        printf("\n\tDISPLAYING CONTACT(S) \n");
+        for(int x = 0; x < *contsAdded; x++) {
+            printf("\n\tName of contact: %s\n\tNumber of contact: %s\n", friends[x].names, friends[x].number);
+        }
+    }
+    else {
+        printf("\n\tNo contacts to display\n");
     }
 }
