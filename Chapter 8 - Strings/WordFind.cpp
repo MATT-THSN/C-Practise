@@ -22,6 +22,7 @@
 
 //Function Prototypes
 void checkAnswer(char *, char [], int *);
+void wait(int);
 
 int main(void) {
     //Array of garbled letters with words inside
@@ -95,35 +96,35 @@ int main(void) {
                 checkAnswer(strGame[x], answer, &pScore);
             }
             //If not the right length then remove points
-            else { printf("\n\tSorry, word not found!\n"); pScore--; }
+            else { printf("\n\tSorry, word not found!\n"); pScore--; wait(3); }
         break;
 
         case 1:
             if(strlen(answer) >= 4) {
                 checkAnswer(strGame[x], answer, &pScore);
             }
-            else { printf("\n\tSorry, word not found!\n"); pScore--; }
+            else { printf("\n\tSorry, word not found!\n"); pScore--; wait(3); }
         break;
 
         case 2:
             if(strlen(answer) >= 5) {
                 checkAnswer(strGame[x], answer, &pScore);
             }
-            else { printf("\n\tSorry, word not found!\n"); pScore--; }
+            else { printf("\n\tSorry, word not found!\n"); pScore--; wait(3); }
         break;
 
         case 3:
             if(strlen(answer) >= 9) {
                 checkAnswer(strGame[x], answer, &pScore);
             }
-            else { printf("\n\tSorry, word not found!\n"); pScore--; }
+            else { printf("\n\tSorry, word not found!\n"); pScore--; wait(3); }
         break;
 
         case 4:
             if(strlen(answer) >= 4) {
                 checkAnswer(strGame[x], answer, &pScore);
             } 
-            else { printf("\n\tSorry, word not found!\n"); pScore--; }
+            else { printf("\n\tSorry, word not found!\n"); pScore--; wait(3); }
         break;
     }
 
@@ -136,9 +137,15 @@ int main(void) {
     return 0;
 } //End main
 
+void wait(int x) {
+    int initialTime = time(NULL);
+    while(initialTime + x > time(NULL)) {
+            //Holding for 'x' seconds
+        }
+}
+
 void checkAnswer(char *string1, char string2[], int *score) {
     int x;
-    int initialTime = time(NULL);
     /* Convert answer to UPPER CASE to perform a valid comparison */
     for (x = 0; x <= strlen(string2); x++) {
         string2[x] = toupper(string2[x]);
@@ -146,18 +153,14 @@ void checkAnswer(char *string1, char string2[], int *score) {
     //Compares two strings and checks if answer isn't null
     if (strstr(string1, string2) != 0 && string2[0] != 0) {
         //If correct print message
-            printf("\n\tGreat job!\n");
-            *score += 1;
-        while(initialTime + 3 > time(NULL)) {
-            //Holding for 3 seconds
-        }
+        printf("\n\tGreat job!\n");
+        wait(3);
+        *score += 1;
     }
     else {
         //Otherwise show loose message
         printf("\n\tSorry, word not found!\n");
+        wait(3);
         *score -= 1;
-        while(initialTime + 3 > time(NULL)) {
-            //Holding for 3 seconds
-        }
     }
 } // End Check Answer
