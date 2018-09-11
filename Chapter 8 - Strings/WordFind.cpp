@@ -26,8 +26,8 @@ void checkAnswer(char *, char [], int *);
 int main(void) {
     //Array of garbled letters with words inside
     char *strGame[5] = {
-        "ADELANGUAGEFERVZ0PIBMOUSECURITY",
-        "ZBPOINTERSKLML00PMNOCOTKALI",
+        "ADELANGUAGEFERVZ0PIBMOUSECURITYERT",
+        "ZBPOINTERSKLML00KALIPMNOCOT",
         "PODSTRINGGDIWHIEEICERLSLINUX",
         "YVCPROGRAMMERWQKNULTFORENSICSHMD",
         "UKUNIXFIMWXIZEQZINPTYPEUTEX"
@@ -86,7 +86,46 @@ int main(void) {
     system("clear");
     printf("\n\tEnter word found: ");
     scanf("%s", answer);
-    checkAnswer(strGame[x], answer, &pScore);
+
+    switch(x) {
+        case 0:
+            //Checking length of answer to ensure it's not a single character input
+            if(strlen(answer) >= 8) {
+                //If long enough then checks answer
+                checkAnswer(strGame[x], answer, &pScore);
+            }
+            //If not the right length then remove points
+            else { printf("\n\tSorry, word not found!\n"); pScore--; }
+        break;
+
+        case 1:
+            if(strlen(answer) >= 4) {
+                checkAnswer(strGame[x], answer, &pScore);
+            }
+            else { printf("\n\tSorry, word not found!\n"); pScore--; }
+        break;
+
+        case 2:
+            if(strlen(answer) >= 5) {
+                checkAnswer(strGame[x], answer, &pScore);
+            }
+            else { printf("\n\tSorry, word not found!\n"); pScore--; }
+        break;
+
+        case 3:
+            if(strlen(answer) >= 9) {
+                checkAnswer(strGame[x], answer, &pScore);
+            }
+            else { printf("\n\tSorry, word not found!\n"); pScore--; }
+        break;
+
+        case 4:
+            if(strlen(answer) >= 4) {
+                checkAnswer(strGame[x], answer, &pScore);
+            } 
+            else { printf("\n\tSorry, word not found!\n"); pScore--; }
+        break;
+    }
 
     displayed = 0;
     startTime = time(NULL);
