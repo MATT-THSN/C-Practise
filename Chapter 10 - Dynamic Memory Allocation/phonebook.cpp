@@ -72,12 +72,12 @@ int main(void) {
     } while (run);
 }
 
-void addContact(contacts * contactsInstance, int &contsAdded) {
+void addContact(contacts * contactsInstance, int &currentAlloc) {
     system("clear");
-    contactsInstance[(contsAdded - 1)].name = (char *) calloc(20, sizeof(char *)); 
-    printf("\n\tAdd a name: "); scanf("%s", contactsInstance[(contsAdded - 1)].name);
-    printf("\tAdd a number: "); scanf("%s", contactsInstance[(contsAdded - 1)].number);
-    contsAdded++;
+    contactsInstance[(currentAlloc - 1)].name = (char *) calloc(20, sizeof(char *)); 
+    printf("\n\tAdd a name: "); scanf("%s", contactsInstance[(currentAlloc - 1)].name);
+    printf("\tAdd a number: "); scanf("%s", contactsInstance[(currentAlloc - 1)].number);
+    currentAlloc++;
 }
 
 void reAlloc(contacts *contactsInstance, int &currentAlloc) {
