@@ -46,7 +46,7 @@ int main(void) {
         scanf("%d", &menuSelc);
         switch (menuSelc) {
             case 1:
-                //
+                addContact(contactsInstance, &contsAdded);
             break;
 
             case 2:
