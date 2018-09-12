@@ -16,10 +16,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct contacts {
+struct contacts {
     char *name;
     char number[10];
-} contacts;
+};
 
 void addContact(contacts *, int *);
 void viewContact(contacts *, const int *);
@@ -75,8 +75,8 @@ void addContact(contacts * contactsInstance, int * contsAdded) {
     *contsAdded = *contsAdded + 1;
 }
 
-void reAlloc(contacts *contactInstance, int * currentAlloc) {
-    contactInstance = (struct contacts*) realloc(&contactInstance, *currentAlloc * sizeof(struct contacts));
+void reAlloc(contacts *contactInstance, int *currentAlloc) {
+    contactInstance = (struct contacts*) realloc(contactInstance, *currentAlloc * sizeof(struct contacts));
     if(contactInstance == NULL) {
         printf("\n\tUnable to reallocate memory");
     }
