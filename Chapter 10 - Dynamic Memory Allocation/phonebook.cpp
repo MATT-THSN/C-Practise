@@ -83,3 +83,9 @@ void addContact(contacts * contactsInstance, int * contsAdded) {
     *contsAdded = *contsAdded + 1;
     printf("After inc");
 }
+
+//NOTES FOR LATER
+/* 
+    - Issue with variables, program not tracking how many contacts are added
+        * Rethink algorithum
+*/
