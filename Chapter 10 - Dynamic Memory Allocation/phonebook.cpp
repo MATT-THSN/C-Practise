@@ -26,7 +26,6 @@ void viewContact(contacts *, const int *);
 void reAlloc(contacts *, int *);
 
 int main(void) {
-    int contsAdded = 0;
     int currentAlloc = 1;
     int menuSelc = 0;
     bool run = true;
@@ -50,10 +49,10 @@ int main(void) {
         scanf("%d", &menuSelc);
         switch (menuSelc) {
             case 1:
-                if(contsAdded >= 1) {
+                if((currentAlloc - 1) >= 1) {
                     reAlloc(contactsInstance, &currentAlloc);
                 }
-                addContact(contactsInstance, &contsAdded);
+                addContact(contactsInstance, &currentAlloc);
             break;
 
             case 2:
@@ -67,21 +66,21 @@ int main(void) {
     } while (run);
 }
 
+void addContact(contacts * contactsInstance, int * contsAdded) {
+    system("clear");
+    contactsInstance[(*contsAdded - 1)].name = (char *) calloc(20, sizeof(char *)); 
+    printf("\n\tAdd a name: "); scanf("%s", contactsInstance[(*contsAdded - 1)].name);
+    printf("\tAdd a number: "); scanf("%s", contactsInstance[(*contsAdded - 1)].number);
+    printf("Before inc");
+    *contsAdded = *contsAdded + 1;
+    printf("After inc");
+}
+
 void reAlloc(contacts *contactInstance, int * currentAlloc) {
     contactInstance = (struct contacts*) realloc(currentAlloc, sizeof(struct contacts));
     if(contactInstance == NULL) {
         printf("\n\tUnable to reallocate memory");
     }
-}
-
-void addContact(contacts * contactsInstance, int * contsAdded) {
-    system("clear");
-    contactsInstance[*contsAdded].name = (char *) calloc(20, sizeof(char *)); 
-    printf("\n\tAdd a name: "); scanf("%s", contactsInstance[*contsAdded].name);
-    printf("\tAdd a number: "); scanf("%s", contactsInstance[*contsAdded].number);
-    printf("Before inc");
-    *contsAdded = *contsAdded + 1;
-    printf("After inc");
 }
 
 //NOTES FOR LATER
