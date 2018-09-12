@@ -17,7 +17,7 @@
 #include <stdlib.h>
 
 struct contacts {
-    char *name;
+    char name[10];
     char number[10];
 };
 
@@ -75,15 +75,17 @@ int main(void) {
 
 void reAlloc(contacts *contactsInstance, int &currentAlloc) {
     printf("DEBUG2");
-    contactsInstance = (struct contacts*) realloc(contactsInstance, currentAlloc * sizeof(struct contacts));
+    contacts *temp;
+    temp = (contacts *) realloc(contactsInstance, currentAlloc * sizeof(struct contacts));
     if(contactsInstance == NULL) {
         printf("\n\tUnable to reallocate memory");
     }
+    contactsInstance = temp;
 }
 
 void addContact(contacts * contactsInstance, int &currentAlloc) {
     printf("DEBUG1");
-    contactsInstance[(currentAlloc - 1)].name = (char *) calloc(20, sizeof(char *)); 
+    //contactsInstance[(currentAlloc - 1)].name = (char *) calloc(20, sizeof(char *)); 
     printf("\n\tAdd a name: "); scanf("%s", contactsInstance[(currentAlloc - 1)].name);
     printf("\tAdd a number: "); scanf("%s", contactsInstance[(currentAlloc - 1)].number);
     currentAlloc++;
