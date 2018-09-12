@@ -96,9 +96,3 @@ void displayContacts(contacts *contactsInstance, int &currentAlloc) {
         printf("\n\tPhone: %s\n", contactsInstance[x].number);
     }
 }
-
-//NOTES FOR LATER
-/* 
-    - Issue with variables, program not tracking how many contacts are added
-        * Rethink algorithum
-*/
