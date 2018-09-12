@@ -17,7 +17,7 @@
 #include <stdlib.h>
 
 struct contacts {
-    char name[10];
+    char *name;
     char number[10];
 };
 
@@ -85,7 +85,7 @@ void reAlloc(contacts *contactsInstance, int &currentAlloc) {
 
 void addContact(contacts * contactsInstance, int &currentAlloc) {
     printf("DEBUG1");
-    //contactsInstance[(currentAlloc - 1)].name = (char *) calloc(20, sizeof(char *)); 
+    contactsInstance[(currentAlloc - 1)].name = (char *) calloc(20, sizeof(char *)); 
     printf("\n\tAdd a name: "); scanf("%s", contactsInstance[(currentAlloc - 1)].name);
     printf("\tAdd a number: "); scanf("%s", contactsInstance[(currentAlloc - 1)].number);
     currentAlloc++;
