@@ -50,7 +50,7 @@ int main(void) {
         scanf("%d", &menuSelc);
         switch (menuSelc) {
             case 1:
-                if((currentAlloc - 1) >= 1) {
+                if(currentAlloc != 1) {
                     reAlloc(contactsInstance, currentAlloc);
                     printf("Realloc");
                 }
