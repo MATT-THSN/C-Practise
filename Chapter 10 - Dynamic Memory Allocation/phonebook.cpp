@@ -80,9 +80,9 @@ void addContact(contacts * contactsInstance, int &contsAdded) {
     contsAdded++;
 }
 
-void reAlloc(contacts *contactInstance, int &currentAlloc) {
-    contactInstance = (struct contacts*) realloc(contactInstance, currentAlloc * sizeof(struct contacts));
-    if(contactInstance == NULL) {
+void reAlloc(contacts *contactsInstance, int &currentAlloc) {
+    contactsInstance = (struct contacts*) realloc(contactsInstance, currentAlloc * sizeof(struct contacts));
+    if(contactsInstance == NULL) {
         printf("\n\tUnable to reallocate memory");
     }
 }
