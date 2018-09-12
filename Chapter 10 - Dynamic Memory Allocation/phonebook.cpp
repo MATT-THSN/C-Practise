@@ -43,8 +43,8 @@ int main(void) {
         printf("\n\tCONTACTS APP\n\n");
         printf("\t#1 Add a contact");
         printf("\n\t#2 Modify a contact");
-        //printf("\n\t#3 View contacts");
-        printf("\n\t#3 QUIT");
+        printf("\n\t#3 View contacts");
+        printf("\n\t#4 QUIT");
         printf("\n\tInput: ");
         scanf("%d", &menuSelc);
         switch (menuSelc) {
@@ -61,6 +61,10 @@ int main(void) {
             break;
 
             case 3:
+                //
+            break;
+
+            case 4:
                 run = !run;
             break;
         }
