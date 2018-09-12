@@ -48,10 +48,8 @@ int main(void) {
         scanf("%d", &menuSelc);
         switch (menuSelc) {
             case 1:
-                printf("CASE1");
                 if(currentAlloc != 1) {
                     reAlloc(contactsInstance, currentAlloc);
-                    printf("Realloc");
                 }
                 addContact(contactsInstance, currentAlloc);
                 menuSelc = 0;
@@ -74,17 +72,14 @@ int main(void) {
 }
 
 void reAlloc(contacts *contactsInstance, int &currentAlloc) {
-    printf("DEBUG2");
-    contacts *temp;
-    temp = (contacts *) realloc(contactsInstance, currentAlloc * sizeof(struct contacts));
+    void* temp = realloc(contactsInstance, currentAlloc * sizeof(struct contacts));
     if(contactsInstance == NULL) {
         printf("\n\tUnable to reallocate memory");
     }
-    contactsInstance = temp;
+    contactsInstance = (struct contact*) temp;
 }
 
 void addContact(contacts * contactsInstance, int &currentAlloc) {
-    printf("DEBUG1");
     contactsInstance[(currentAlloc - 1)].name = (char *) calloc(20, sizeof(char *)); 
     printf("\n\tAdd a name: "); scanf("%s", contactsInstance[(currentAlloc - 1)].name);
     printf("\tAdd a number: "); scanf("%s", contactsInstance[(currentAlloc - 1)].number);
