@@ -12,3 +12,16 @@
         phone book entries through a menu. Use the realloc() function to add contiguous memory
         segments to the original memory block when a user adds a new book entry.
 */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct contacts {
+    char *name;
+    char number[10];
+} contacts;
+
+int main(void) {
+    contacts *contactsInstance = (struct contacts*) calloc(20, sizeof(struct contacts));
+}
+
