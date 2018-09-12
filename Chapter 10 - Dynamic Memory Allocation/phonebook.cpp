@@ -18,7 +18,7 @@
 
 struct contacts {
     char *name;
-    char number[10];
+    char *number;
 };
 
 void addContact(contacts *, int &);
@@ -31,7 +31,9 @@ int main(void) {
     int menuSelc = 0;
 
     //Allocates struct contacts memory
-    contacts *contactsInstance = (struct contacts*) calloc(currentAlloc, currentAlloc * sizeof(struct contacts));
+    //contacts *contactsInstance = (struct contacts*) calloc(currentAlloc, currentAlloc * sizeof(struct contacts));
+    contactsInstance[currentAlloc].name = (char*)calloc(10, sizeof(char));// new char[10];
+	contactsInstance[currentAlloc].number = (char*)calloc(10, sizeof(char));//new char[10];
     //If unable to allocate, return 1
     if(contactsInstance == NULL) {
         return 1;
@@ -72,11 +74,11 @@ int main(void) {
 }
 
 void reAlloc(contacts *contactsInstance, int &currentAlloc) {
-    void* temp = realloc(contactsInstance, currentAlloc * sizeof(struct contacts));
+    void *temp = realloc(contactsInstance, currentAlloc * sizeof(struct contacts));
     if(contactsInstance == NULL) {
         printf("\n\tUnable to reallocate memory");
     }
-    contactsInstance = (struct contact*) temp;
+    contactsInstance = (struct contacts*) temp;
 }
 
 void addContact(contacts * contactsInstance, int &currentAlloc) {
