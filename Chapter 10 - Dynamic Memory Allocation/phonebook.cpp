@@ -24,6 +24,7 @@ struct contacts {
 void addContact(contacts *, int *);
 void viewContact(contacts *, const int *);
 void reAlloc(contacts *, int *);
+void displayContacts(contacts *);
 
 int main(void) {
     int currentAlloc = 1;
@@ -84,6 +85,10 @@ void reAlloc(contacts *contactInstance, int *currentAlloc) {
     if(contactInstance == NULL) {
         printf("\n\tUnable to reallocate memory");
     }
+}
+
+void displayContacts(contacts * contactsInstance) {
+    //
 }
 
 //NOTES FOR LATER
