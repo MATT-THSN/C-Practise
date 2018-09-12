@@ -80,8 +80,8 @@ void reAlloc(contacts *contactsInstance, int &currentAlloc) {
 }
 
 void addContact(contacts * contactsInstance, int &currentAlloc) {
-    contactsInstance[currentAlloc - 1].name = (char*)calloc(10, sizeof(char));// new char[10];
-	contactsInstance[currentAlloc - 1].number = (char*)calloc(10, sizeof(char));//new char[10];
+    contactsInstance[currentAlloc - 1].name = (char*) calloc(10, sizeof(char));// (char*) calloc(10, sizeof(char))
+	contactsInstance[currentAlloc - 1].number = (char*) calloc(10, sizeof(char));//  new char[10];
     printf("\n\tAdd a name: "); scanf("%s", contactsInstance[(currentAlloc - 1)].name);
     printf("\tAdd a number: "); scanf("%s", contactsInstance[(currentAlloc - 1)].number);
     currentAlloc++;
