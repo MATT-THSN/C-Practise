@@ -20,10 +20,12 @@ int main(void) {
     char *movie;
     movie = (char *) malloc(80 * sizeof(char));
 
+    //Gets input from user
     printf("\n\tWhat is your favourite movie?\n");
     printf("\tInput: "); scanf("%s", movie);
     printf("\tYour favourite movie is: %s\n", movie);
     
+    //Frees memory used by movie variable
     free(movie);
     return 0;
 }
