@@ -22,13 +22,13 @@ struct contacts {
 };
 
 void addContact(contacts *, int &);
-void viewContact(contacts *, const int *);
 void reAlloc(contacts *, int &);
 void displayContacts(contacts *, int &);
 
 int main(void) {
     int currentAlloc = 1;
     bool run = true;
+    int menuSelc = 0;
 
     //Allocates struct contacts memory
     contacts *contactsInstance = (struct contacts*) calloc(currentAlloc, sizeof(struct contacts));
@@ -39,7 +39,6 @@ int main(void) {
 
     //MENU U.I
     do {
-        int menuSelc = 0;
         printf("\n\tCONTACTS APP\n\n");
         printf("\t#1 Add a contact");
         printf("\n\t#2 Modify a contact");
@@ -55,14 +54,16 @@ int main(void) {
                     printf("Realloc");
                 }
                 addContact(contactsInstance, currentAlloc);
+                menuSelc = 0;
             break;
 
             case 2:
-                //
+                menuSelc = 0;
             break;
 
             case 3:
                 displayContacts(contactsInstance, currentAlloc);
+                menuSelc = 0;
             break;
 
             case 4:
@@ -74,14 +75,13 @@ int main(void) {
 
 void reAlloc(contacts *contactsInstance, int &currentAlloc) {
     printf("DEBUG2");
-    realloc(contactsInstance, currentAlloc * sizeof(struct contacts));
+    contactsInstance = (contacts*) realloc(contactsInstance, currentAlloc * sizeof(struct contacts));
     if(contactsInstance == NULL) {
         printf("\n\tUnable to reallocate memory");
     }
 }
 
 void addContact(contacts * contactsInstance, int &currentAlloc) {
-    system("clear");
     printf("DEBUG1");
     contactsInstance[(currentAlloc - 1)].name = (char *) calloc(20, sizeof(char *)); 
     printf("\n\tAdd a name: "); scanf("%s", contactsInstance[(currentAlloc - 1)].name);
