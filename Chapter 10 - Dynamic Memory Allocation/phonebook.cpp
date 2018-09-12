@@ -26,7 +26,7 @@ void reAlloc(contacts *, int *);
 
 int main(void) {
     int contsAdded = 0;
-    int currentAlloc = 0;
+    int currentAlloc = 1;
     int menuSelc = 0;
     bool run = true;
 
@@ -43,10 +43,13 @@ int main(void) {
         printf("\t#1 Add a contact");
         printf("\n\t#2 Modify a contact");
         printf("\n\t#3 QUIT");
+        printf("\n\tInput: ");
         scanf("%d", &menuSelc);
         switch (menuSelc) {
             case 1:
                 addContact(contactsInstance, &contsAdded);
+                printf("%s", contactsInstance[contsAdded].name);
+                printf("%s", contactsInstance[contsAdded].number);
             break;
 
             case 2:
@@ -62,6 +65,7 @@ int main(void) {
 
 void reAlloc(contacts *contactInstance, int * currentAlloc) {
     contactInstance = (struct contacts*) realloc(currentAlloc, sizeof(struct contacts));
+    *currentAlloc += 1;
 }
 
 void addContact(contacts * contactsInstance, int * contsAdded) {
@@ -71,4 +75,7 @@ void addContact(contacts * contactsInstance, int * contsAdded) {
     scanf("%s", contactsInstance[*contsAdded].name);
     printf("\tAdd a number: "); printf("\n\tInput: ");
     scanf("%s", contactsInstance[*contsAdded].number);
+    if(*contsAdded >= 1) {
+        reAlloc(*&contactsInstance, *&contsAdded);
+    }
 }
