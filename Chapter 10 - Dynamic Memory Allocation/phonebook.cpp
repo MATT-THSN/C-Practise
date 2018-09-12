@@ -31,7 +31,7 @@ int main(void) {
     int menuSelc = 0;
 
     //Allocates struct contacts memory
-    contacts *contactsInstance = (struct contacts*) calloc(currentAlloc, sizeof(struct contacts));
+    contacts *contactsInstance = (struct contacts*) calloc(currentAlloc, currentAlloc * sizeof(struct contacts));
     //If unable to allocate, return 1
     if(contactsInstance == NULL) {
         return 1;
