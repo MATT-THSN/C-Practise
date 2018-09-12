@@ -71,9 +71,7 @@ void addContact(contacts * contactsInstance, int * contsAdded) {
     contactsInstance[(*contsAdded - 1)].name = (char *) calloc(20, sizeof(char *)); 
     printf("\n\tAdd a name: "); scanf("%s", contactsInstance[(*contsAdded - 1)].name);
     printf("\tAdd a number: "); scanf("%s", contactsInstance[(*contsAdded - 1)].number);
-    printf("Before inc");
     *contsAdded = *contsAdded + 1;
-    printf("After inc");
 }
 
 void reAlloc(contacts *contactInstance, int * currentAlloc) {
