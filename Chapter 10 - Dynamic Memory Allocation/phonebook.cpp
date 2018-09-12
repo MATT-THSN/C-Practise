@@ -51,6 +51,7 @@ int main(void) {
             case 1:
                 if((currentAlloc - 1) >= 1) {
                     reAlloc(contactsInstance, &currentAlloc);
+                    printf("Realloc");
                 }
                 addContact(contactsInstance, &currentAlloc);
             break;
