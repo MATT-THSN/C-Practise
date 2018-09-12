@@ -75,7 +75,7 @@ int main(void) {
 
 void reAlloc(contacts *contactsInstance, int &currentAlloc) {
     printf("DEBUG2");
-    contactsInstance = (contacts*) realloc(contactsInstance, currentAlloc * sizeof(struct contacts));
+    contactsInstance = (struct contacts*) realloc(contactsInstance, currentAlloc * sizeof(struct contacts));
     if(contactsInstance == NULL) {
         printf("\n\tUnable to reallocate memory");
     }
