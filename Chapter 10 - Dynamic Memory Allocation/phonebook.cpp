@@ -32,8 +32,6 @@ int main(void) {
 
     //Allocates struct contacts memory
     contacts *contactsInstance = (contacts*) calloc(currentAlloc, currentAlloc * sizeof(struct contacts));
-    contactsInstance[currentAlloc].name = (char*)calloc(10, sizeof(char));// new char[10];
-	contactsInstance[currentAlloc].number = (char*)calloc(10, sizeof(char));//new char[10];
     //If unable to allocate, return 1
     if(contactsInstance == NULL) {
         return 1;
@@ -82,7 +80,8 @@ void reAlloc(contacts *contactsInstance, int &currentAlloc) {
 }
 
 void addContact(contacts * contactsInstance, int &currentAlloc) {
-    contactsInstance[(currentAlloc - 1)].name = (char *) calloc(20, sizeof(char *)); 
+    contactsInstance[currentAlloc - 1].name = (char*)calloc(10, sizeof(char));// new char[10];
+	contactsInstance[currentAlloc - 1].number = (char*)calloc(10, sizeof(char));//new char[10];
     printf("\n\tAdd a name: "); scanf("%s", contactsInstance[(currentAlloc - 1)].name);
     printf("\tAdd a number: "); scanf("%s", contactsInstance[(currentAlloc - 1)].number);
     currentAlloc++;
