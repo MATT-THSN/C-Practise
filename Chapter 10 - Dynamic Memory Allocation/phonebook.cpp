@@ -88,10 +88,10 @@ void reAlloc(contacts *contactsInstance, int &currentAlloc) {
 }
 
 void displayContacts(contacts *contactsInstance, int &currentAlloc) {
-    for(int x = 0; x <= (currentAlloc - 1); x++) {
-        printf("\n\n\tContact #%d", currentAlloc);
-        printf("\n\tName: %s", contactsInstance[(currentAlloc - 1)].name);
-        printf("\n\tPhone: %s", contactsInstance[(currentAlloc - 1)].number);
+    for(int x = 0; x < (currentAlloc - 1); x++) {
+        printf("\n\n\tContact #%d", x);
+        printf("\n\tName: %s", contactsInstance[(x)].name);
+        printf("\n\tPhone: %s\n", contactsInstance[(x)].number);
     }
 }
 
