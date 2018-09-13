@@ -20,19 +20,22 @@ int main(void) {
   FILE *ptr;
   char *name[15];
   char *power[15];
+
   //Open file
   ptr = fopen("superheroes.dat", "r");
   if(ptr == NULL) {
     goto ErrorHandler;
   }
   
+  //Printing of data
   printf("\nHero's Name\tSuper Power\n");
   fscanf(ptr, "%s%s", name, power);
   while(!feof(ptr)) {
     printf("\n%s\t%s", name, power);
     fscanf(ptr, "%s%s", name, power);
   }
-  
+
+  //Close file, return 0
   fclose(ptr);
   return 0;
 
