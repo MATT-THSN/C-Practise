@@ -29,6 +29,7 @@ int main(void) {
     printf("\n\tCharacter Roster\n");
     printf("\n1\tAdd New Character\n");
     printf("\n2\tList Characters\n\n");
+    printf("\n3\tModify or Delete Characters\n\n");
     printf("Select an option: ");
     scanf("%d", &response);
 
@@ -67,6 +68,10 @@ int main(void) {
             printf("\n");
           }
         } else goto ErrorHandler; //There is a file i/o error
+      break;
+
+      case 3:
+        system("clear");
       break;
 
       default:
