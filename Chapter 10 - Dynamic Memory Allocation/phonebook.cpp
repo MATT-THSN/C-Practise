@@ -11,6 +11,9 @@
         calloc() to reserve the first memory segment. The user should be able to add or modify
         phone book entries through a menu. Use the realloc() function to add contiguous memory
         segments to the original memory block when a user adds a new book entry.
+
+        * Had to leave program due to realloc() not behaving as I would expect, after doing some research
+          and speaking to a colleague I just can't get it to work
 */
 
 #include <stdio.h>
