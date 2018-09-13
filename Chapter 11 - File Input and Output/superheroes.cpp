@@ -11,3 +11,33 @@
       output until the end-of-file is reached. Include an error-handling routine that notifies
       the user of any system errors and exits the program.
 */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+  //Setup variables
+  FILE *ptr;
+  char *name[15];
+  char *power[15];
+  //Open file
+  ptr = fopen("superheroes.dat", "r");
+  if(ptr == NULL) {
+    goto ErrorHandler;
+  }
+  
+  printf("\nHero's Name\tSuper Power\n");
+  fscanf(ptr, "%s%s", name, power);
+  while(!feof(ptr)) {
+    printf("\n%s\t%s", name, power);
+    fscanf(ptr, "%s%s", name, power);
+  }
+  
+  fclose(ptr);
+  return 0;
+
+  //Error Handle
+  ErrorHandler:
+    printf("Unable to open file");
+    exit(EXIT_FAILURE); 
+}
