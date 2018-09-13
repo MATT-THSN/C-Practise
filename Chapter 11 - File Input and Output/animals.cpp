@@ -14,14 +14,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void addAnimal(FILE *);
-void readFile(FILE *);
+void addAnimal();
+void readFile();
 void fileCheck(FILE *);
 
 int main(void) {
   bool run = true;
   int menuSelc = 0;
-  FILE *fPtr;
 
   //Menu
   do {
@@ -34,11 +33,12 @@ int main(void) {
     //Runs corresponding selection
     switch(menuSelc) {
       case 1:
-        addAnimal(fPtr);
+        addAnimal();
       break;
 
       case 2:
-        readFile(fPtr);
+        printf("\n\tCalling read file");
+        readFile();
       break;
 
       default:
@@ -56,12 +56,13 @@ void fileCheck(FILE *fPtr) {
   }
 }
 
-void addAnimal(FILE * fPtr) {
+void addAnimal() {
   char name[15];
   char trait[15];
   char colour[15];
 
   //Opens file
+  FILE *fPtr;
   fPtr = fopen("animals.dat", "a");
   fileCheck(*&fPtr);
 
@@ -74,14 +75,15 @@ void addAnimal(FILE * fPtr) {
   fclose(fPtr);
 }
 
-void readFile(FILE * fPtr) {
+void readFile() {
   char name[15];
   char trait[15];
   char colour[15];
 
   //Opens file
+  FILE *fPtr;
   fPtr = fopen("animals.dat", "r");
-  fileCheck(*&fPtr);
+  //fileCheck(*&fPtr);
 
   //Prints data from file
   fscanf(fPtr, "%s%s%s", name, trait, colour);
