@@ -70,7 +70,7 @@ void addAnimal() {
   printf("\tInput: ");
   //Stores user input into variable, prints to file
   scanf("%s%s%s", name, trait, colour);
-  fprintf(fPtr, "%s %s %s", name, trait, colour);
+  fprintf(fPtr, "%s %s %s\n", name, trait, colour);
   fclose(fPtr);
 }
 
