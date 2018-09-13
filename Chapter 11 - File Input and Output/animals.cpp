@@ -37,7 +37,6 @@ int main(void) {
       break;
 
       case 2:
-        printf("\n\tCalling read file");
         readFile();
       break;
 
@@ -64,7 +63,7 @@ void addAnimal() {
   //Opens file
   FILE *fPtr;
   fPtr = fopen("animals.dat", "a");
-  fileCheck(*&fPtr);
+  fileCheck(fPtr);
 
   //Gets input
   printf("\n\tGive an animal name, special trait and it's colour with a space between them\n");
@@ -83,12 +82,13 @@ void readFile() {
   //Opens file
   FILE *fPtr;
   fPtr = fopen("animals.dat", "r");
-  //fileCheck(*&fPtr);
+  fileCheck(fPtr);
 
   //Prints data from file
+  printf("\n\n\tName\tTrait\tColour\n");
   fscanf(fPtr, "%s%s%s", name, trait, colour);
-  while(feof(fPtr)) {
-    printf("%s\t%s\t%s", name, trait, colour);
+  while(!feof(fPtr)) {
+    printf("\t%s\t%s\t%s\n", name, trait, colour);
     fscanf(fPtr, "%s%s%s", name, trait, colour);
   }
   fclose(fPtr);
